@@ -4,3 +4,70 @@
     In this Components for the document will be defined
     All the styles related to footer buttons text-fields will go here
 */
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: fixed;
+  font-size: 1rem;
+  left: 0;
+  bottom: 0;
+}
+
+.footer-end {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 19px;
+  background-color: var(--footer-bg-color);
+  color: var(--footer-color);
+}
+
+.footer-left {
+  margin-left: auto;
+}
+
+.social-handles,
+.social-handles > img {
+  margin-left: 1vw;
+}
+
+.details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 19px;
+  background-color: rgba(82, 104, 231, 0.1);
+  color: #5268e7;
+}
+
+@media only screen and (max-width: 700px) {
+  .footer {
+    font-size: 10px;
+  }
+
+  .footer-left {
+    display: none;
+  }
+
+  .details {
+      padding: 7px;
+  }
+
+  .footer-end {
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
+  
+  .social-handles > img {
+      margin-bottom: 6px;
+      margin-left: 22px;
+  }
+}
+
+@media only screen and (max-height: 500px) {
+  .footer {
+    display: none;
+  }
+}

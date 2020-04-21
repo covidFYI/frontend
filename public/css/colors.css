@@ -4,3 +4,8 @@
     In this colors for the documents will be defined
     we will be using CSS variables for this so we don't have to remember the color hex
 */
+
+:root {
+    --footer-bg-color: #25333C;
+    --footer-color: rgba(255, 255, 255, 0.5);
+}
