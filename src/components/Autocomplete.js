@@ -102,6 +102,7 @@ export class Autocomplete extends Component {
           <img className="searchLens" src="assets/searchLens.svg" alt="" />
           <input
             type="text"
+            spellcheck="false"
             placeholder="Example: Delhi"
             className="search-input"
             onChange={onChange}
