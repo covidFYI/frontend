@@ -8,6 +8,8 @@
 :root {
     --footer-bg-color: #25333C;
     --footer-color: rgba(255, 255, 255, 0.5);
+    --search-bg-active: #f6f8f8;
+    --search-bg: #edf0f1;
     --accent: #5268E7;
 
     --danger: #FF1E56;
