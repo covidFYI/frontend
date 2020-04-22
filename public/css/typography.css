@@ -7,6 +7,7 @@
 :root {
     font-family: 'Noto Sans', sans-serif;
     line-height: 1.618;
+    font-size: calc(12px + (18 - 12) * ((100vw - 380px) / (1440 - 380)));
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -15,22 +16,22 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    font-size: 30px;
+    font-size: 3em;
 }
 h2 {
-    font-size: 24px;
+    font-size: 2.5em;
 }
 h3 {
-    font-size: 22px;
+    font-size: 2em;
 } 
 h4 {
-    font-size: 20px;
+    font-size: 1.8em;
 } 
 h5 {
-    font-size: 18px;
+    font-size: 1.2em;
 } 
 h6 {
-    font-size: 16px;
+    font-size: 1em;
 }
 
 .link {

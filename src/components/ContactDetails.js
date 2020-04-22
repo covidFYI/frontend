@@ -4,7 +4,7 @@ export default class ContactDetails extends Component {
     render() {
         return (
             <div className="contact-details">
-                <h4>Quick contact details:</h4>
+                <h5>Quick contact details:</h5>
                 <div className="contact-info">
                     <div className="contact">
                         <div className="icon">

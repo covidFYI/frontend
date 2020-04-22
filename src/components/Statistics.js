@@ -4,7 +4,7 @@ export default class Statistics extends Component {
     render() {
         return (
             <div className="statistics">
-                <h4>Current COVID-19 Stats:</h4>
+                <h5>Current COVID-19 Stats:</h5>
                 <div className="statistics-info">
                     <div className="stat info">
                         <div className="stat--label">Confirmed</div>

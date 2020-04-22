@@ -154,10 +154,14 @@ div.dropdown-navigation a.nav-item:hover {
     align-items: center;
 }
 
+.stat.danger, .stat.danger > .stat--number {
+    margin-right: 0px;
+}
+
 .stat--number {
     margin: 5px 20px 0 0;
-    padding: 20px;
-    font-size: 24px;
+    padding: 0.7em;
+    font-size: 1.2em;
     min-width: 6ch;
     text-align: center;
 }
@@ -198,6 +202,10 @@ div.dropdown-navigation a.nav-item:hover {
     background-color: var(--success-light)
 }
 
+.contact-details, .statistics {
+    margin-top: 2em;
+}
+
 @media only screen and (max-width: 991px) {
     .hide-991 {
         display: none !important;
@@ -215,7 +223,7 @@ div.dropdown-navigation a.nav-item:hover {
     }
 
     .information > * {
-        min-width: 350px;
+        min-width: 320px;
         max-width: 600px;
     }
 }
