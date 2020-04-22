@@ -3,6 +3,7 @@ import Autocomplete from "./Autocomplete";
 
 export default class SearchBar extends React.Component {
 	render() {
+        // Hardcoding StateList till api endpoints are ready
 		return (
 			<Autocomplete
 				options={[
