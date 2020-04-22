@@ -206,6 +206,16 @@ div.dropdown-navigation a.nav-item:hover {
     margin-top: 2em;
 }
 
+.heading {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 2rem;
+    color: var(--accent);
+    text-align: center;
+    line-height: 65px;
+    margin-top: 54px;
+}
+
 .search-container {
     position: relative;
     width: 45vw;
@@ -252,6 +262,7 @@ div.dropdown-navigation a.nav-item:hover {
     margin: 10px 0px;
     padding: 0 65px;
     border: none;
+    color: var(--accent);
     background-color: var(--search-bg);
     font-size: 1rem;
     outline: none;
@@ -276,6 +287,11 @@ div.dropdown-navigation a.nav-item:hover {
     padding: 10px 65px;
     font-size: 1rem;
     border-bottom: 1px solid var(--search-bg);
+}
+
+.no-options {
+    margin-top: 15px;
+    color: var(--danger);
 }
 
 
@@ -337,6 +353,13 @@ div.dropdown-navigation a.nav-item:hover {
   }
   nav .logo img {
     width: 35vw;
+  }
+
+  .heading {
+    font-family: Roboto;
+    font-size: 16px;
+    line-height: 19px;
+    margin-top: 14px;
   }
 
   .search-bar {
