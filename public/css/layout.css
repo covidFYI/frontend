@@ -4,3 +4,11 @@
     All the style related to layout like flex/grid will go here
 
 */
+
+.container {
+}
+
+.content {
+    margin: 0 auto;
+    max-width: 1440px;
+}

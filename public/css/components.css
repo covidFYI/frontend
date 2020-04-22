@@ -5,6 +5,10 @@
     All the styles related to footer buttons text-fields will go here
 */
 
+:root {
+    --box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
 .footer {
   display: flex;
   flex-direction: column;
@@ -42,6 +46,180 @@
   color: #5268e7;
 }
 
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 3rem;
+    box-shadow: var(--box-shadow);
+}
+
+nav .logo img {
+    width: 15vw;
+    max-width: 200px;
+}
+
+ul.nav-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.show-991 {
+    display: none;
+}
+
+ul.nav-items > .nav-item > a {
+    padding: 10px 25px;
+}
+
+.hamburger-menu:hover {
+    cursor: pointer;
+}
+
+div.dropdown-navigation a.nav-item {
+    padding: 15px 35px;
+    transition: 0.3s ease-in-out;
+}
+
+div.dropdown-navigation a.nav-item:hover {
+    background-color: var(--accent);
+    color: white;
+    cursor: pointer;
+}
+
+.nav-item.active {
+    color: var(--accent);
+    position: relative;
+}
+
+.nav-items .nav-item.active a:after {
+    position: absolute;
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: var(--accent);
+    left: 50%;
+    bottom: -10px;
+    transform: translate(-50%);
+}
+
+.hamburger-menu {
+    align-items: center;
+    justify-content: flex-end;
+    position: relative;
+    width: 50px;
+}
+
+.dropdown-navigation {
+    position: absolute;
+    padding: 15px 0px;
+    background: #fff;
+    right: -10px;
+    top: 100%;
+    width: 200px;
+    border-radius: 5px;
+    box-shadow: var(--box-shadow);
+    flex-direction: column;
+    display: none;
+}
+
+.dropdown-navigation.show-dropdown {
+    display: flex;
+}
+
+/* Information Component */
+.information {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 2rem;
+}
+.contact {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.contact > * {
+    margin-right: 20px;
+}
+.statistics-info {
+    display: flex;
+}
+.stat {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.stat--number {
+    margin: 5px 20px 0 0;
+    padding: 20px;
+    font-size: 24px;
+    min-width: 6ch;
+    text-align: center;
+}
+
+.stat--label {
+    margin-left: -20px
+}
+
+.stat.info .stat--label, .stat.info .stat--number{
+    color: var(--info)
+}
+
+.stat.danger .stat--label, .stat.danger .stat--number{
+    color: var(--danger)
+}
+
+.stat.warning .stat--label, .stat.warning .stat--number{
+    color: var(--warning)
+}
+
+.stat.success .stat--label, .stat.success .stat--number{
+    color: var(--success)
+}
+
+.stat.info .stat--number{
+    background-color: var(--info-light)
+}
+
+.stat.danger .stat--number{
+    background-color: var(--danger-light)
+}
+
+.stat.warning .stat--number{
+    background-color: var(--warning-light)
+}
+
+.stat.success .stat--number{
+    background-color: var(--success-light)
+}
+
+@media only screen and (max-width: 991px) {
+    .hide-991 {
+        display: none !important;
+    }
+
+    .show-991 {
+        display: flex;
+    }
+
+    nav .logo img {
+        width: 25vw;
+    }
+
+    .information {
+    }
+
+    .information > * {
+        min-width: 350px;
+        max-width: 600px;
+    }
+}
+
 @media only screen and (max-width: 700px) {
   .footer {
     font-size: 10px;
@@ -64,10 +242,14 @@
       margin-bottom: 6px;
       margin-left: 22px;
   }
+  nav .logo img {
+    width: 35vw;
+  }
 }
 
 @media only screen and (max-height: 500px) {
-  .footer {
-    display: none;
-  }
+    .footer {
+        display: none;
+    }
+    
 }

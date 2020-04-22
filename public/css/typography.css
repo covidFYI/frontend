@@ -4,8 +4,40 @@
     In this typography for the document will be defined
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Roboto:wght@300;400;500&display=swap');
-
-body {
+:root {
     font-family: 'Noto Sans', sans-serif;
+    line-height: 1.618;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    margin-bottom:2rem;
+}
+
+h1 {
+    font-size: 30px;
+}
+h2 {
+    font-size: 24px;
+}
+h3 {
+    font-size: 22px;
+} 
+h4 {
+    font-size: 20px;
+} 
+h5 {
+    font-size: 18px;
+} 
+h6 {
+    font-size: 16px;
+}
+
+.link {
+    text-decoration: none;
+    color: #000;
+}
+
+.active .link {
+    color: var(--accent);
 }

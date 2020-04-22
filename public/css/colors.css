@@ -8,4 +8,15 @@
 :root {
     --footer-bg-color: #25333C;
     --footer-color: rgba(255, 255, 255, 0.5);
+    --accent: #5268E7;
+
+    --danger: #FF1E56;
+    --info: #00A3FF;
+    --success: #00843D;
+    --warning: #fca001;
+
+    --danger-light: rgba(255, 30, 86, 0.05);
+    --info-light: rgba(0, 163, 255, 0.05);
+    --success-light: rgba(0, 132, 61, 0.05);
+    --warning-light: #fca00110
 }

@@ -1,3 +1,9 @@
-#ignoring node-modules
-*node_modules
-.next/
+# next.js build output
+.next
+# dotenv environment variables file (build for Zeit Now)
+.env
+.env.build
+# Dependency directories
+node_modules/
+#misc
+.DS_Store

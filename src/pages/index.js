@@ -1,9 +1,16 @@
-import Footer from './components/Footer'
+import Footer from '../components/Footer'
+import NavigationBar from '../components/NavigationBar'
+import InformationComponent from '../components/InformationComponent'
 
 export default function Index() {
     return (
         <div>
-            Hi
+            <NavigationBar />
+            <div className="container">
+                <div className="content">
+                    <InformationComponent/>
+                </div>
+            </div>
             <Footer />
         </div>
     )
