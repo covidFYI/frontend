@@ -3,6 +3,7 @@ import Footer from '../components/Footer'
 import NavigationBar from '../components/NavigationBar'
 import InformationComponent from '../components/InformationComponent'
 import SearchContainer from '../components/SearchContainer'
+import Infotypes from '../components/Infotypes'
 
 class Index extends React.Component {
 
@@ -13,15 +14,16 @@ class Index extends React.Component {
     }
 
     getSelectedState = (state) => {
-        this.setState({ stateSelected: state }, this.getInfoTypes)
+        this.setState({ stateSelected: state, showInfoTypes: false }, this.getInfoTypes)
     }
 
     getInfoTypes = async () => {
+        // NOTE: Till new backend is not deployed, we can use flask backend from organisation repo on our localhost.
         const res = await fetch(`http://localhost/api/v1/state/${this.state.stateSelected}`)
         const stateData = await res.json()
         const infotypes = [... new Set(stateData.entries.map(data => data.category))]
         this.setState({ availableInfoTypes: infotypes, showInfoTypes: true })
-        console.log(infotypes)
+        console.log(infotypes) // For Debugging
     }
 
     render() {
@@ -31,6 +33,7 @@ class Index extends React.Component {
                 <div className="container">
                     <div className="content">
                         <SearchContainer getSelectedState={this.getSelectedState} />
+                        { this.state.showInfoTypes ? <Infotypes infotypes={this.state.availableInfoTypes} /> : null }
                         <InformationComponent/>
                     </div>
                 </div>
