@@ -426,6 +426,39 @@ div.dropdown-navigation a.nav-item:hover {
     color: #fff;
 }
 
+.infotypes-container, .grid-5-col {
+    display: grid;
+    grid-template-columns: repeat(5, 140px);
+    gap: 5vw;
+    justify-content: center;
+    text-align: center;
+    margin: 45px 0;
+}
+
+.grid-4-col {
+    grid-template-columns: repeat(4, 140px);
+}
+
+.grid-3-col {
+    grid-template-columns: repeat(3, 140px);
+}
+
+.grid-2-col {
+    grid-template-columns: repeat(2, 140px);
+}
+  
+.info-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+  
+.info-icon > p {
+    color: #5268e7;
+    font-size: 1rem;
+    margin: 10px 0;
+}
+
 @media only screen and (max-width: 1230px) {
     .chatbot-popper {
         bottom: 150px;
@@ -541,6 +574,18 @@ div.dropdown-navigation a.nav-item:hover {
   .options > li {
       padding: 10px;
       font-size: 14px;
+  }
+
+  .infotypes-container {
+    grid-template-columns: repeat(3, 110px);
+  }
+
+  .info-icon > p {
+    font-size: 12px;
+  }
+
+  .info-icon > img {
+    width: 40px;
   }
 }
 
