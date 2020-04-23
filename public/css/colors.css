@@ -20,5 +20,8 @@
     --danger-light: rgba(255, 30, 86, 0.05);
     --info-light: rgba(0, 163, 255, 0.05);
     --success-light: rgba(0, 132, 61, 0.05);
-    --warning-light: #fca00110
+    --warning-light: #fca00110;
+
+    --gray: #7A7A7A;
+    --light-gray: #F2F2F2;
 }

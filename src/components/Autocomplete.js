@@ -13,7 +13,6 @@ export class Autocomplete extends Component {
   };
 
   onChange = (e) => {
-    console.log("onChanges");
 
     const { options } = this.props;
     const userInput = e.currentTarget.value;
@@ -102,7 +101,7 @@ export class Autocomplete extends Component {
           <img className="searchLens" src="assets/searchLens.svg" alt="" />
           <input
             type="text"
-            spellcheck="false"
+            spellCheck="false"
             placeholder="Example: Delhi"
             className="search-input"
             onChange={onChange}
