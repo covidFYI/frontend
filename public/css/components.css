@@ -109,6 +109,7 @@ div.dropdown-navigation a.nav-item:hover {
     justify-content: flex-end;
     position: relative;
     width: 50px;
+    z-index: 2;
 }
 
 .dropdown-navigation {
