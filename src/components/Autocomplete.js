@@ -37,6 +37,8 @@ export class Autocomplete extends Component {
       showOptions: false,
       userInput: e.currentTarget.innerText,
     });
+
+    this.props.getSelectedState(e.currentTarget.innerText)
   };
   onKeyDown = (e) => {
     const { activeOption, filteredOptions } = this.state;
@@ -47,6 +49,7 @@ export class Autocomplete extends Component {
         showOptions: false,
         userInput: filteredOptions[activeOption],
       });
+      this.props.getSelectedState(filteredOptions[activeOption]) 
     } else if (e.keyCode === 38) {
       if (activeOption === 0) {
         return;

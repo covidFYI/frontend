@@ -6,6 +6,7 @@ export default class SearchBar extends React.Component {
         // Hardcoding StateList till api endpoints are ready
 		return (
 			<Autocomplete
+                getSelectedState={this.props.getSelectedState}
 				options={[
 					"Goa",
 					"Jammu and Kashmir",
@@ -46,7 +47,7 @@ export default class SearchBar extends React.Component {
 					"Tripura",
 					"Uttarakhand",
 					"Tripura ",
-				]}
+                ]}
 			/>
 		);
 	}
