@@ -456,8 +456,35 @@ div.dropdown-navigation a.nav-item:hover {
   
 .info-icon > p {
     color: #5268e7;
-    font-size: 1rem;
+    font-size: 0.9rem;
     margin: 10px 0;
+}
+.categories-grid {
+    display: flex;
+    margin: 50px auto;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.category {
+    display: grid;
+    grid-template-columns: 100px;
+    grid-template-rows: 100px 20px;
+    place-items: center;
+    padding: 20px 40px
+}
+
+.category.link {
+    color: var(--accent);
+}
+.category.link.active {
+    background: rgba(82, 104, 231, 0.1);
+}
+.category-name {
+    font-weight: 600;
+    font-size: 1rem;
+    justify-self: center
 }
 
 @media only screen and (max-width: 1230px) {

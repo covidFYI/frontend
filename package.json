@@ -9,7 +9,7 @@
     "react-dom": "^16.13.1"
   },
   "devDependencies": {},
-  "scripts": {  
+  "scripts": {
     "dev": "next",
     "build": "next build",
     "start": "next start"

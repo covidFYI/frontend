@@ -49,7 +49,7 @@ export class Autocomplete extends Component {
         showOptions: false,
         userInput: filteredOptions[activeOption],
       });
-      this.props.getSelectedState(filteredOptions[activeOption]) 
+      this.props.getSelectedState(filteredOptions[activeOption])
     } else if (e.keyCode === 38) {
       if (activeOption === 0) {
         return;
@@ -101,7 +101,7 @@ export class Autocomplete extends Component {
     return (
       <React.Fragment>
         <div className="search-bar">
-          <img className="searchLens" src="assets/searchLens.svg" alt="" />
+          <img className="searchLens" src="/assets/searchLens.svg" alt="" />
           <input
             type="text"
             spellCheck="false"
@@ -111,7 +111,7 @@ export class Autocomplete extends Component {
             onKeyDown={onKeyDown}
             value={userInput}
           />
-          <img className="submit-arrow" src="assets/arrow.svg" />
+          <img className="submit-arrow" src="/assets/arrow.svg" />
         </div>
         {optionList}
       </React.Fragment>
