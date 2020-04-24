@@ -4,6 +4,7 @@ import NavigationBar from '../components/NavigationBar'
 import InformationComponent from '../components/InformationComponent'
 import SearchContainer from '../components/SearchContainer'
 import Infotypes from '../components/Infotypes'
+import Categories from '../components/Categories'
 
 class Index extends React.Component {
 
@@ -33,7 +34,7 @@ class Index extends React.Component {
                 <div className="container">
                     <div className="content">
                         <SearchContainer getSelectedState={this.getSelectedState} />
-                        { this.state.showInfoTypes ? <Infotypes infotypes={this.state.availableInfoTypes} /> : null }
+                        { this.state.showInfoTypes ? <Categories state={this.state.stateSelected} /> : null }
                         <InformationComponent/>
                     </div>
                 </div>

@@ -1,4 +1,6 @@
-const Infotypes = ({ infotypes }) => {
+import Link from 'next/link'
+
+const Infotypes = ({ infotypes, stateSelected }) => {
 	const iconMapping = {
 		Doctor: "icon-doctor.svg",
 		Government: "icon-govt-officers.svg",
@@ -14,10 +16,12 @@ const Infotypes = ({ infotypes }) => {
 			<div className={`infotypes-container grid-${infotypes.length}-col`}>
 				{infotypes.map((info) => {
 					return (
+                        <Link href="/[state]/[category]" as={`/${stateSelected}/${info}`}>
 						<div className="info-icon">
 							<img src={`/assets/${iconMapping[info]}`} />
 							<p>{info}</p>
 						</div>
+                        </Link>
 					);
 				})}
 			</div>

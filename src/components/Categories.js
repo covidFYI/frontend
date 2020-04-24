@@ -7,11 +7,11 @@ export default class Categories extends Component {
         count: 0
     }
 
-    componentDidUpdate() {
-        this.updateComp()
-    }
+    // componentDidUpdate() {
+    //     this.updateComp()
+    // }
 
-    updateComp() {
+    componentDidMount() {
         if (this.state.count < 10) {
             const url = `http://localhost/api/v1/state/${this.props.state}`;
 
@@ -39,7 +39,7 @@ export default class Categories extends Component {
             <div className="categories-grid">
                 {Array.from(this.state.categories).map(category => {
                     return (
-                        <Link key={category} href={`/${this.props.state}/${category}`}>
+                        <Link key={category} href="/[state]/[category]" as={`/${this.props.state}/${category}`}>
                             <a className={this.props.category !== category ? `category link` : `category link active`}>
                                 <img className="category-icon" src={`/assets/${iconMapping[category]}`} />
                                 <span className="category-name">{category}</span>

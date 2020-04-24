@@ -5,6 +5,7 @@ import NavigationBar from '../../components/NavigationBar'
 import SearchBar from "../../components/SearchBar";
 import Categories from '../../components/Categories';
 import CategoryData from '../../components/CategoryData';
+import Link from 'next/link'
 
 const State = () => {
     const router = useRouter(); 
@@ -20,11 +21,11 @@ const State = () => {
                     <SearchBar />
                     <Categories state={state} category={category} />
                     <div className="breadcrumbs">
-                        <a href="/">Home</a>
+                        <Link href="/" as="/">Home</Link>
                         <img src="/assets/breadcrum-arrow.svg" />
-                        <a href={`/${state}`}>{state}</a>
+                        <Link href="/[state]" as={`/${state}`}>{state}</Link>
                         <img src="/assets/breadcrum-arrow.svg" />
-                        <a href={`/${category}`}>{category}</a>
+                        <Link href="/[state]/[category]" as={`/${state}/${category}`}>{category}</Link>
                     </div>
                     <CategoryData state={state} category={category}  />
                 </div>

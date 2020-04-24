@@ -1,35 +1,36 @@
-import React, { Component } from 'react'
+import React, { useState, useEffect } from 'react'
 
-export default class CategoryData extends Component {
-    state = {
+const CategoryData = (props) => {
+    const [state, setState] = useState({
         data: [],
         count: 0
-    }
+    })
 
-    componentDidUpdate() {
-        this.updateComp()
-    }
+    // componentDidUpdate() {
+    //     this.updateComp()
+    // }
 
-    updateComp() {
-        if(this.state.count < 10) {
-            const url = `http://localhost/api/v1/state/${this.props.state}/${this.props.category}`;
+
+    useEffect(() => {
+        console.log("componentDidMount called")
+        if(state.count < 10) {
+            let url = `http://localhost/api/v1/state/${props.state}/${props.category}`;
     
             fetch(url)
                 .then(res => res.json())
                 .then(data => {
-                    this.setState({
+                    setState({
                         data: data.entries,
-                        count: this.state.count + 1
+                        count: state.count + 1
                     })
-                    this.cat = data.entries;
+                    // cat = data.entries;
                 })
         }
-    }
+    }, [props.category])
 
-    render() {
         return (
             <div className="data-grid">
-                {Array.from(this.state.data).map(dataUnit => {
+                {Array.from(state.data).map(dataUnit => {
                     return (
                         <div key={dataUnit.id} className="data-card">
                             <div className="info">
@@ -58,5 +59,7 @@ export default class CategoryData extends Component {
                 })}
             </div>
         )
-    }
+    
 }
+
+export default CategoryData
