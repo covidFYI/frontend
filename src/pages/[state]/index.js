@@ -38,10 +38,6 @@ const Index = () => {
                 <div className="content">
                     <SearchBar />
                     <Categories categories={categories} state={state} />
-                    <p>{`Home => ${state}`}</p>
-                    <div className="data-container">
-
-                    </div>
                 </div>
             </div>
             <Footer />

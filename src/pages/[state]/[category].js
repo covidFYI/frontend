@@ -6,47 +6,11 @@ import SearchBar from "../../components/SearchBar";
 import Categories from '../../components/Categories';
 import CategoryData from '../../components/CategoryData';
 
-
 const State = () => {
-    const router = useRouter();
-
-    const [categories, setCategories] = useState({});
-
-    const [data, setCategory] = useState([]);
-    const [count, setCount] = useState(0);
+    const router = useRouter(); 
 
     const { state, category } = router.query;
 
-    let catData = []
-
-    async function fetchData() {
-        const url = `http://localhost/api/v1/state/${state}/${category}`;
-
-        const results = await fetch(url);
-        results
-            .json()
-            .then(res => setCategory(res.entries))
-    }
-
-    async function fetchCategories() {
-        const url = `http://localhost/api/v1/state/${state}`;
-
-        const results = await fetch(url);
-        results
-            .json()
-            .then(res => setCategories([... new Set(res.entries.map(data => data.category))]));
-
-        catData = data
-
-        console.log(data)
-    }
-
-    useEffect(() => {
-        fetchData();
-        fetchCategories();
-    }, [count])
-
-    setTimeout(() => setCount(1), 2500)
 
     return (
         <div>
@@ -54,9 +18,15 @@ const State = () => {
             <div className="container">
                 <div className="content">
                     <SearchBar />
-                    <Categories categories={categories} state={state} category={category} data={catData} />
-                    <p>{`Home => ${state} => ${category}`}</p>
-                    <CategoryData data={catData} />
+                    <Categories state={state} category={category} />
+                    <div className="breadcrumbs">
+                        <a href="/">Home</a>
+                        <img src="/assets/breadcrum-arrow.svg" />
+                        <a href={`/${state}`}>{state}</a>
+                        <img src="/assets/breadcrum-arrow.svg" />
+                        <a href={`/${category}`}>{category}</a>
+                    </div>
+                    <CategoryData state={state} category={category}  />
                 </div>
             </div>
             <Footer />

@@ -2,6 +2,27 @@ import React, { Component } from 'react';
 import Link from 'next/link'
 
 export default class Categories extends Component {
+    state = {
+        categories: [],
+        count: 0
+    }
+
+    componentDidUpdate() {
+        this.updateComp()
+    }
+
+    updateComp() {
+        if (this.state.count < 10) {
+            const url = `http://localhost/api/v1/state/${this.props.state}`;
+
+            fetch(url)
+                .then(res => res.json())
+                .then(data => this.setState({
+                    categories: [... new Set(data.entries.map(data => data.category))],
+                    count: this.state.count + 1
+                }))
+        }
+    }
 
     render() {
         const iconMapping = {
@@ -16,7 +37,7 @@ export default class Categories extends Component {
 
         return (
             <div className="categories-grid">
-                {Array.from(this.props.categories).map(category => {
+                {Array.from(this.state.categories).map(category => {
                     return (
                         <Link key={category} href={`/${this.props.state}/${category}`}>
                             <a className={this.props.category !== category ? `category link` : `category link active`}>
@@ -26,7 +47,7 @@ export default class Categories extends Component {
                         </Link>
                     )
                 })}
-                
+
             </div>
         )
     }
