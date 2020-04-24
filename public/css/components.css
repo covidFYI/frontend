@@ -557,6 +557,7 @@ div.dropdown-navigation a.nav-item:hover {
 
 .source-link {
     justify-self: flex-end;
+    color: #5D636F;
 }
 
 .breadcrumbs {
