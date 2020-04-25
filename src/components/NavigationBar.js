@@ -3,11 +3,11 @@ import Link from 'next/link';
 
 export default class NavigationBar extends Component {
     componentDidMount() {
-        const hamburgerButton = document.querySelector('.hamburger-menu');
-        const hamburgerMenu = document.querySelector('.dropdown-navigation');
-        hamburgerButton.addEventListener('click', () => {
-            hamburgerMenu.classList.toggle('show-dropdown')
-        })
+        // const hamburgerButton = document.querySelector('.hamburger-menu');
+        // const hamburgerMenu = document.querySelector('.dropdown-navigation');
+        // hamburgerButton.addEventListener('click', () => {
+        //     hamburgerMenu.classList.toggle('show-dropdown')
+        // })
     }
     render() {
         return (
@@ -61,7 +61,7 @@ export default class NavigationBar extends Component {
                         </Link>
                     </li>
                 </ul> */}
-                <div className="show-991 hamburger-menu">
+                {/* <div className="show-991 hamburger-menu">
                     <img src="/assets/hamburger.svg" className="hamburger-button" />
                     <div className="dropdown-navigation">
                         <Link href="">
@@ -95,7 +95,7 @@ export default class NavigationBar extends Component {
                             </a>
                         </Link>
                     </div>
-                </div>
+                </div> */}
             </nav>
         )
     }
