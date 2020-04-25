@@ -44,3 +44,7 @@ h6 {
 .active .link {
     color: var(--accent);
 }
+
+.footer {
+    font-size: 13px;
+}

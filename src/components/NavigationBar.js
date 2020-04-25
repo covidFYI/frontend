@@ -12,10 +12,12 @@ export default class NavigationBar extends Component {
     render() {
         return (
             <nav>
-                <div className="logo">
-                    <img src="/assets/logo.svg"></img>
-                </div>
-                <ul className="nav-items hide-991">
+                <Link href="/">
+                    <a className="logo">
+                        <img src="/assets/logo.svg"></img>
+                    </a>
+                </Link>
+                {/* <ul className="nav-items hide-991">
                     <li className="nav-item active">
                         <Link href="">
                             <a className="link">
@@ -58,7 +60,7 @@ export default class NavigationBar extends Component {
                             </a>
                         </Link>
                     </li>
-                </ul>
+                </ul> */}
                 <div className="show-991 hamburger-menu">
                     <img src="/assets/hamburger.svg" className="hamburger-button" />
                     <div className="dropdown-navigation">
