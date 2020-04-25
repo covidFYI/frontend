@@ -21,11 +21,11 @@ const State = () => {
                     <SearchBar />
                     <Categories state={state} category={category} />
                     <div className="breadcrumbs">
-                        <Link href="/" as="/">Home</Link>
+                        <Link href="/" as="/"><a>Home</a></Link>
                         <img src="/assets/breadcrum-arrow.svg" />
-                        <Link href="/[state]" as={`/${state}`}>{state}</Link>
+                        <Link href="/[state]" as={`/${state}`}><a>{state}</a></Link>
                         <img src="/assets/breadcrum-arrow.svg" />
-                        <Link href="/[state]/[category]" as={`/${state}/${category}`}>{category}</Link>
+                        <Link href="/[state]/[category]" as={`/${state}/${category}`}><a>{category}</a></Link>
                     </div>
                     <CategoryData state={state} category={category}  />
                 </div>
