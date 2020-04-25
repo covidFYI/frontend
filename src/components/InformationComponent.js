@@ -6,7 +6,6 @@ export default class InformationComponent extends Component {
     render() {
         return (
             <div className="information">
-                <ContactDetails />
                 <Statistics />
             </div>
         )

@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
-import ChatBot from "./ChatBot"
+// import ChatBot from "./ChatBot"
+import ContactDetails from './ContactDetails'
+
 
 export default class Footer extends Component {
   componentDidMount() {
@@ -20,11 +22,12 @@ export default class Footer extends Component {
     return (
       <footer className="footer">
         <div className="details">
-          <p>
-            It feels proud to inform that collectively we have over 1500 contact
-            details in our database (Adding more on daily basis).
-            {/* Click here for full details */}
-          </p>
+          {/* <p>
+            {/* It feels proud to inform that collectively we have over 1500 contact
+            details in our database (Adding more on daily basis). */}
+            {/* Click here for full details }
+          </p> */}
+          <ContactDetails />
           {/* <div className="chatbot-popper">
             <img className="floating-button" src="/assets/message-icon.svg" width="40px" />
             <ChatBot />
