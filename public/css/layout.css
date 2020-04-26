@@ -16,8 +16,8 @@
 }
 
 #__next > div {
-    /* position: relative; */
-    /* padding-bottom: 1.5rem; */
+    position: relative;
+    padding-bottom: 200px;
 }
 
 .tabbed-navigation {
