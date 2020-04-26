@@ -42,3 +42,23 @@ export default class MobileContent extends Component {
         )
     }
 }
+
+
+[
+    {
+        name: 'Active',
+        data: 5000
+    },
+    {
+        name: 'Recovered',
+        data: 1000
+    },
+    {
+        name: 'Deaths',
+        data: 500
+    },
+    {
+        name: 'Confirmed',
+        data: 7000
+    },
+]
