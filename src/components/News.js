@@ -1,17 +1,18 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-export default class News extends Component {
-    render() {
-        return (
-            <div className="news">
-                <div className="image-wrapper">
-                    <img src="https://www.jagranimages.com/images/newimg/25042020/25_04_2020-corona111_20220455.jpg"/>
-                </div>
-                <div className="news-info">
-                    <h5>News headline goes here</h5>
-                    <p>Source: NDTV</p>
-                </div>
-            </div>
-        )
-    }
-}
+const News = (props) => {
+	return (
+		<a href={props.data.link} target="_blank" className="news-link">
+			<div className="news">
+				<div className="image-wrapper">
+					<img src={props.data.img} />
+				</div>
+				<div className="news-info">
+					<h5>{props.data.title}</h5>
+				</div>
+			</div>
+		</a>
+	);
+};
+
+export default News;

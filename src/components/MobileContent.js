@@ -30,7 +30,7 @@ export default class MobileContent extends Component {
                         </div>
                         <div className="news-content">
                             <h4>Latest news</h4>
-                            <NewsContainer />
+                            <NewsContainer initialProps={this.props.initialProps} />
                         </div>
                         <div className="stat-content">
                             <h4>Latest stats</h4>
