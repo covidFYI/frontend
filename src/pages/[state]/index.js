@@ -36,7 +36,7 @@ const Index = () => {
             <NavigationBar />
             <div className="container">
                 <div className="content">
-                    <SearchBar />
+                    {/* <SearchBar /> */}
                     <Categories categories={categories} state={state} />
                 </div>
             </div>

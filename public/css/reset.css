@@ -40,6 +40,10 @@ body {
     height: 100vh;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 ol, ul {
 	list-style: none;
 }
