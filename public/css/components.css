@@ -514,7 +514,7 @@ div.dropdown-navigation a.nav-item:hover {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     grid-auto-rows: auto;
     grid-gap: 20px;
-    padding-bottom: 200px;
+    padding-bottom: 100px;
 }
 
 .data-card {
