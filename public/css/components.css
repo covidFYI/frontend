@@ -304,7 +304,7 @@ div.dropdown-navigation a.nav-item:hover {
 	border-top: none;
 	box-sizing: border-box;
 	max-height: 300px;
-	overflow: hidden;
+	overflow: auto;
 }
 
 .options > li {
@@ -657,7 +657,9 @@ a.social-media-link {
     width: 100%
 }
 
-
+.infograph {
+    /* padding-top: 140px; */
+}
 
 .infograph > img  {
     width: 70%
@@ -668,6 +670,24 @@ a.social-media-link {
     justify-content: center;
     align-items: flex-end;
     flex-direction: column;
+    color: var(--accent);
+    font-weight: bold;
+}
+.show-991 .search {
+    transition: 0.3s ease-in-out;
+    box-sizing: border-box;
+    width: calc(100% - 10px);
+    background: #fff;
+    padding: 10px;
+    transition: 0.3s ease
+}
+.show-991 .search.expand {
+    position: absolute;
+    width: calc(100% - 10px);
+    top: 70px;
+    left: 0;
+    height: 55vh;
+
 }
 
 @media only screen and (max-width: 1230px) {
@@ -717,8 +737,8 @@ a.social-media-link {
 	}
 
 	.tabs-content {
-		padding: 1em;
-		width: calc(100vw - 1em);
+        padding: 1em;
+        width: calc(100vw - 1em);
 		box-sizing: border-box;
 	}
 }

@@ -7,7 +7,7 @@ export default class SearchBar extends React.Component {
 		return (
 			<Autocomplete
                 getSelectedState={this.props.getSelectedState}
-                focusHandler={this.props.focusHandler}
+                // focusHandler={this.props.focusHandler}
 				options={[
 					"Goa",
 					"Jammu and Kashmir",

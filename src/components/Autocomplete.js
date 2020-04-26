@@ -13,9 +13,9 @@ export class Autocomplete extends Component {
     focus: false,
   };
 
-  onFocus = (e) => {
-      this.props.focusHandler ? this.props.focusHandler(true) : null
-  }
+  // onFocus = (e) => {
+  //     this.props.focusHandler ? this.props.focusHandler(true) : null
+  // }
 
   onBlur = (e) => {
       this.props.focusHandler ? this.props.focusHandler(false) : null
@@ -121,7 +121,7 @@ export class Autocomplete extends Component {
             onChange={onChange}
             onKeyDown={onKeyDown}
             value={userInput}
-            onFocus={onFocus}
+            // onFocus={onFocus}
             // onBlur={onBlur}
           />
           <img className="submit-arrow" src="/assets/arrow.svg" />

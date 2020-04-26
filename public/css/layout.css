@@ -17,6 +17,7 @@
 
 #__next > div {
     position: relative;
+    min-height: 85vh;
 }
 
 .stats-flex {
@@ -86,6 +87,7 @@
     left: 0;
     background: rgba(0, 0, 0, 0.1);
     transition: 0.3s ease-in-out;
+    pointer-events: none;
 }
 
 

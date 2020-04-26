@@ -27,7 +27,20 @@ export default class HomeContainer extends Component {
 	focusHandler = (value) => {
 		this.setState({ inputFocus: value });
 		console.log(value);
-	};
+    };
+    
+    componentDidMount() {
+        let input = document.querySelector('.search-input')
+        let searchPanel = document.querySelector('.search')
+        input.addEventListener('focus', () => {
+            searchPanel.classList.add('expand')
+        })
+
+        let homeTab = document.querySelector('.home-tab');
+        homeTab.addEventListener('click', () => {
+            searchPanel.classList.remove('expand')
+        })
+    }
 
 	render() {
 		return (
