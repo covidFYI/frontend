@@ -622,7 +622,8 @@ div.dropdown-navigation a.nav-item:hover {
 .breadcrumbs {
 	margin: 20px 0;
 	display: flex;
-	align-items: center;
+    align-items: center;
+    padding: 0 20px;
 }
 
 .breadcrumbs img {

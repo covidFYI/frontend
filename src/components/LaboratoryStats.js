@@ -12,11 +12,9 @@ export default class LaboratoryStats extends PureComponent {
         fetch('https://api.covidfyi.in/v1/categories/Laboratory/total')
             .then(res => res.json())
             .then(data => {
-                console.log(data)
                 this.setState({
                     stats: data.results
                 })
-                console.log(this.state.stats)
             })
 
     }

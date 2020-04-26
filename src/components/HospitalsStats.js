@@ -12,11 +12,9 @@ export default class HospitalsStats extends PureComponent {
         fetch('https://api.covidfyi.in/v1/categories/Hospitals/total')
             .then(res => res.json())
             .then(data => {
-                console.log(data)
                 this.setState({
                     stats: data.results
                 })
-                console.log(this.state.stats)
             })
 
     }
