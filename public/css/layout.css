@@ -6,7 +6,8 @@
 */
 
 .container {
-    padding: 1em
+    padding: 1em;
+    /* padding-bottom: 1.5rem; */
 }
 
 .content {
@@ -15,7 +16,8 @@
 }
 
 #__next > div {
-    position: relative;
+    /* position: relative; */
+    /* padding-bottom: 1.5rem; */
 }
 
 .tabbed-navigation {

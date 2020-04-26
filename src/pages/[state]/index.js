@@ -32,7 +32,7 @@ const Index = () => {
     setTimeout(() => setCount(1), 100)
 
     return (
-        <div>
+        <>
             <NavigationBar />
             <div className="container">
                 <div className="content">
@@ -41,7 +41,7 @@ const Index = () => {
                 </div>
             </div>
             <Footer />
-        </div>
+        </>
     )
 }
 

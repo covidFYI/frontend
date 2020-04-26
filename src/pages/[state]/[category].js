@@ -18,7 +18,7 @@ const State = () => {
             <NavigationBar />
             <div className="container">
                 <div className="content">
-                    <SearchBar />
+                    {/* <SearchBar /> */}
                     <Categories state={state} category={category} />
                     <div className="breadcrumbs">
                         <Link href="/" as="/"><a>Home</a></Link>

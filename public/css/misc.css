@@ -3,3 +3,12 @@
     ----------------------------------------------------------------------------
     Everything that you think that won't go in any other CSS file will go here
 */
+
+@-webkit-keyframes fadeIn {
+    from { opacity: 0; }
+      to { opacity: 1; }
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+      to { opacity: 1; }
+}
