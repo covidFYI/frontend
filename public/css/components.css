@@ -643,6 +643,33 @@ a.social-media-link {
 	margin-left: 15px;
 }
 
+.banner, .infograph {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner-image {
+    width: 35%
+}
+
+.banner-image > img, .infograph{
+    width: 100%
+}
+
+
+
+.infograph > img  {
+    width: 70%
+}
+
+.banner-text {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: column;
+}
+
 @media only screen and (max-width: 1230px) {
 	.chatbot-popper {
 		bottom: 150px;

@@ -32,27 +32,22 @@ export default class HomeContainer extends Component {
 	render() {
 		return (
 			<div className="home-container">
-				<div className={`hide-on-focus-${this.state.inputFocus}`}>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-					eiusmod tempor incididunt ut labore et dolore magna aliqua. Nisl nisi
-					scelerisque eu ultrices vitae auctor eu augue ut. Cursus vitae congue
-					mauris rhoncus aenean. Facilisis sed odio morbi quis commodo. Accumsan
-					sit amet nulla facilisi morbi tempus iaculis urna id. Molestie ac
-					feugiat sed lectus. Condimentum vitae sapien pellentesque habitant
-					morbi tristique senectus et netus. Facilisi etiam dignissim diam quis
-					enim lobortis scelerisque fermentum dui. Urna porttitor rhoncus dolor
-					purus non enim praesent elementum. Est ullamcorper eget nulla facilisi
-					etiam dignissim. Parturient montes nascetur ridiculus mus mauris vitae
-					ultricies. Nisi scelerisque eu ultrices vitae. Quam id leo in vitae
-					turpis massa sed elementum tempus. Sed ullamcorper morbi tincidunt
-					ornare. Sapien pellentesque habitant morbi tristique senectus.
-					Ultrices neque ornare aenean euismod elementum nisi quis eleifend
-					quam.
+				<div className={`hide-on-focus-${this.state.inputFocus} banner`}>
+					<div className="banner-image">
+                        <img src="/assets/peoplecovid1.svg" width=""/>
+                    </div>
+                    <div className="banner-text">
+                        <span>All the help and details about</span>
+                        <span>COVID-19, in one place.</span>
+                    </div>
 				</div>
 				<div className="search">
 					<SearchContainer focusHandler={this.focusHandler} getSelectedState={this.getSelectedState} />
+                    {this.state.showInfoTypes ? <Categories state={this.state.stateSelected} /> : null}
 				</div>
-                {this.state.showInfoTypes ? <Categories state={this.state.stateSelected} /> : null}
+                <div className="infograph">
+                    <img src="/assets/b.svg" />
+                </div>
 			</div>
 		);
 	}
