@@ -546,20 +546,12 @@ div.dropdown-navigation a.nav-item:hover {
 }
 
 .data-grid {
-<<<<<<< HEAD
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-	grid-auto-rows: auto;
-	grid-gap: 20px;
-	padding-bottom: 100px;
-=======
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     grid-auto-rows: auto;
     grid-gap: 20px;
     padding: 0 10px;
     padding-bottom: 100px;
->>>>>>> origin/master
 }
 
 .data-card {
