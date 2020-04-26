@@ -31,9 +31,9 @@ function shuffleArray(array) {
 }
 
 export async function getStaticProps() {
-	const res = await fetch("http://localhost:9000/result");
+	const res = await fetch("https://api.covidfyi.in/v1/news");
     var json = await res.json();
-    json = (shuffleArray(json)).slice(0, 7);
+    json = (shuffleArray(json.results)).slice(0, 7);
 	return {
         props: {results: json}
     };

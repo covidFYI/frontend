@@ -14,13 +14,13 @@ const CategoryData = (props) => {
     useEffect(() => {
         console.log("componentDidMount called")
         if(state.count < 10) {
-            let url = `http://localhost/api/v1/state/${props.state}/${props.category}`;
+            let url = `https://api.covidfyi.in/v1/state/${props.state}/${props.category}`;
     
             fetch(url)
                 .then(res => res.json())
                 .then(data => {
                     setState({
-                        data: data.entries,
+                        data: data.results,
                         count: state.count + 1
                     })
                     // cat = data.entries;
@@ -38,21 +38,21 @@ const CategoryData = (props) => {
                                     {dataUnit.name != undefined ? dataUnit.name : dataUnit.category}
                                 </div>
                                 <div className="location">Location: {dataUnit.area}</div>
-                                {dataUnit.phone_1 ? <div className="phone">{dataUnit.phone_1}</div> : null}
-                                {dataUnit.email_1 ? <div className="email">{dataUnit.email_1}</div> : null }
+                                {dataUnit.phone1 ? <div className="phone">{dataUnit.phone1}</div> : null}
+                                {dataUnit.email1 ? <div className="email">{dataUnit.email1}</div> : null }
                             </div>
                             <div className="cta">
                                 <div className="button-group">
-                                    {dataUnit.phone_1 ? <a href={`tel:${dataUnit.phone_1}`} className="contact-button">
+                                    {dataUnit.phone1 ? <a href={`tel:${dataUnit.phone1}`} className="contact-button">
                                         <img src="/assets/phone.svg" />Call
                                     </a> : null }
 
-                                    {dataUnit.email_1 ? <a href={`mailto:${dataUnit.email_1}`} className="contact-button">
+                                    {dataUnit.email1 ? <a href={`mailto:${dataUnit.email1}`} className="contact-button">
                                         <img src="/assets/email-icon.svg" />Email
                                     </a> : null}
                                     
                                 </div>
-                                {dataUnit.sourceURL ? <a className="source-link" href={dataUnit.sourceURL}>Source link</a> : null}
+                                {dataUnit.sourceurl ? <a className="source-link" href={dataUnit.sourceurl}>Source link</a> : null}
                             </div>
                         </div>
                     )

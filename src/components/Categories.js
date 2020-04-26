@@ -13,12 +13,12 @@ export default class Categories extends Component {
 
     componentDidUpdate() {
         if (this.state.count < 10) {
-            const url = `http://localhost/api/v1/state/${this.props.state}`;
+            const url = `https://api.covidfyi.in/v1/state/${this.props.state}`;
 
             fetch(url)
                 .then(res => res.json())
                 .then(data => this.setState({
-                    categories: [... new Set(data.entries.map(data => data.category))],
+                    categories: [... new Set(data.results.map(data => data.category))],
                     count: this.state.count + 1
                 }))
         }

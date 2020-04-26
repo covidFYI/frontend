@@ -17,9 +17,9 @@ export default class HomeContainer extends Component {
 
     getInfoTypes = async () => {
         // NOTE: Till new backend is not deployed, we can use flask backend from organisation repo on our localhost.
-        const res = await fetch(`http://localhost/api/v1/state/${this.state.stateSelected}`)
+        const res = await fetch(`https://api.covidfyi.in/v1/state/${this.state.stateSelected}`)
         const stateData = await res.json()
-        const infotypes = [... new Set(stateData.entries.map(data => data.category))]
+        const infotypes = [... new Set(stateData.results.map(data => data.category))]
         this.setState({ availableInfoTypes: infotypes, showInfoTypes: true })
         console.log(infotypes) // For Debugging
     }

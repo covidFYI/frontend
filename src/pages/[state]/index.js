@@ -18,7 +18,7 @@ const Index = () => {
     useEffect(() => {
 
         async function fetchCategories() {
-            const url = `http://localhost/api/v1/state/${state}`;
+            const url = `https://api.covidfyi.in/api/v1/state/${state}`;
 
             const results = await fetch(url);
             results
