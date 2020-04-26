@@ -1,15 +1,15 @@
 import React, { Component, PureComponent } from 'react'
 import {
-    BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, LabelList
+    BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer
 } from 'recharts';
 
 
-export default class LaboratoryStats extends PureComponent {
+export default class HospitalsStats extends PureComponent {
     state = {
         stats: []
     }
     componentDidMount() {
-        fetch('https://api.covidfyi.in/v1/categories/Laboratory/total')
+        fetch('https://api.covidfyi.in/v1/categories/Hospitals/total')
             .then(res => res.json())
             .then(data => {
                 console.log(data)
@@ -24,8 +24,8 @@ export default class LaboratoryStats extends PureComponent {
     render() {
 
         return (
-            <div style={{ width: '100%', height: 1200 }}>
-                <h5>Laboratory Statistics</h5>
+            <div style={{ width: '90%', height: 600 }}>
+                <h5>Hospitals Statistics</h5>
                 <ResponsiveContainer>
                     <BarChart
                         layout="vertical"
@@ -41,9 +41,7 @@ export default class LaboratoryStats extends PureComponent {
                         <YAxis dataKey="state" type="category" />
                         <Tooltip />
                         <Legend />
-                        <Bar dataKey="total" fill="#ff9d00" >
-                            {/* <LabelList dataKey="state" position="right" /> */}
-                        </Bar>
+                        <Bar dataKey="total" fill="#16928e" />
                     </BarChart>
                 </ResponsiveContainer>
             </div>

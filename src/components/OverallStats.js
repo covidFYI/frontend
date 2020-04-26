@@ -3,36 +3,6 @@ import {
     PieChart, Pie, Legend, Tooltip, Cell, ResponsiveContainer
 } from 'recharts';
 
-let data = [
-    {
-        state: "Delhi",
-        Labs: 200,
-        Hospitals: 100,
-    },
-    {
-        state: "Delhi",
-        Labs: 200,
-        Hospitals: 100,
-    },
-    {
-        state: "Delhi",
-        Labs: 200,
-        Hospitals: 100,
-    },
-    {
-        state: "Delhi",
-        Labs: 200,
-        Hospitals: 100,
-    },
-    {
-        state: "Delhi",
-        Labs: 200,
-        Hospitals: 100,
-    },
-];
-
-
-
 export default class OverallStats extends PureComponent {
     state = {
         stats: []
@@ -76,9 +46,10 @@ export default class OverallStats extends PureComponent {
         const COLORS = ['#ff9d00', '#16928e', '#ff4c4c']
         return (
             <div style={{ width: '100%', height: 300 }}>
+                <h5>Overall Statistics</h5>
                 <ResponsiveContainer>
                     <PieChart>
-                        <Pie data={this.state.stats} fill="#8884d8" label datakey="total">
+                        <Pie data={this.state.stats} label datakey="total">
                             <Cell fill={COLORS[0]} label/>
                             <Cell fill={COLORS[1]} />
                             <Cell fill={COLORS[2]} />
