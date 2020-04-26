@@ -164,6 +164,13 @@ div.dropdown-navigation a.nav-item:hover {
     display: flex;
     justify-content: center;
 }
+
+.statistics {
+     display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 .statistics-info {
     display: grid;
     grid-template-columns: 120px 120px;
@@ -509,11 +516,16 @@ div.dropdown-navigation a.nav-item:hover {
     color: var(--accent)
 }
 
+.stats-flex > * {
+    margin-bottom: 30px;
+}
+
 .data-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     grid-auto-rows: auto;
     grid-gap: 20px;
+    padding: 0 10px;
     padding-bottom: 100px;
 }
 

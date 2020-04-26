@@ -19,8 +19,13 @@
     position: relative;
 }
 
+.stats-flex {
+    display: flex;
+    flex-direction: column;
+}
+
 .tabbed-navigation {
-    margin-bottom: 200px;
+    margin-bottom: 30px;
     width: 100vw;
     overflow-x: hidden
 }
