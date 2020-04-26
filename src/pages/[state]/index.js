@@ -18,12 +18,12 @@ const Index = () => {
     useEffect(() => {
 
         async function fetchCategories() {
-            const url = `https://api.covidfyi.in/api/v1/state/${state}`;
+            const url = `https://api.covidfyi.in/v1/state/${state}`;
 
             const results = await fetch(url);
             results
                 .json()
-                .then(res => setCategories([... new Set(res.entries.map(data => data.category))]));
+                .then(res => setCategories([... new Set(res.results.map(data => data.category))]));
         }
 
         fetchCategories();
