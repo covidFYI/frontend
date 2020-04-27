@@ -53,7 +53,7 @@ export default class Content extends Component {
 							</div>
 						</div>
 						<div className="card">
-							<OverallStats height={200}/>
+							<OverallStats height={200} enableLink={true}/>
 						</div>
 						<div className="feature-wrapper">
 							<div className="feature-content">

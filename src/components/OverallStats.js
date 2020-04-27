@@ -2,6 +2,7 @@ import React, { Component, PureComponent } from 'react'
 import {
     PieChart, Pie, Legend, Tooltip, Cell, ResponsiveContainer
 } from 'recharts';
+import Link from 'next/link';
 
 export default class OverallStats extends PureComponent {
     state = {
@@ -45,8 +46,9 @@ export default class OverallStats extends PureComponent {
 
         const COLORS = ['#ffd650', '#56cd8f', '#fd7253']
         return (
-            <div style={{ width: '100%', height: this.props.height ? this.props.height : 300 }}>
+            <div style={{ width: '100%', height: this.props.height ? this.props.height : 300 }} className="overall-stats">
                 <h5>Overall Statistics (India)</h5>
+                {this.props.enableLink ? <Link href="/statistics"><a className="stats-link">view more</a></Link> : null}
                 <ResponsiveContainer>
                     <PieChart>
                         <Pie dataKey="value" data={this.state.stats} label datakey="total" isAnimationActive={false}>
