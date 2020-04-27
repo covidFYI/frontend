@@ -289,7 +289,8 @@ div.dropdown-navigation a.nav-item:hover {
 	color: var(--accent);
 	background-color: var(--search-bg);
 	font-size: 1rem;
-	outline: none;
+    outline: none;
+    transition: 0.3s ease;
 }
 
 .search-input:focus {
@@ -697,6 +698,18 @@ a.social-media-link {
     flex-direction: column;
     color: var(--accent);
     font-weight: bold;
+    max-width: 40ch;
+    text-align: right;
+}
+
+.search-heading {
+    color: #5D636F;
+    font-size: 28px;
+}
+
+.banner-text .tag {
+    font-size: 1.5em;
+    margin-top: 1.618em
 }
 .show-991 .search {
     transition: 0.3s ease-in-out;
@@ -711,7 +724,7 @@ a.social-media-link {
     top: 70px;
     left: 0;
     padding: 10px;
-    min-height: 150px;
+    min-height: 200px;
 }
 
 @media only screen and (max-width: 1230px) {
@@ -754,7 +767,15 @@ a.social-media-link {
 
 	.container {
 		padding: 0;
-	}
+    }
+    
+    .search-heading {
+        font-size: 1.2em;
+        text-align: center
+    }
+    .search {
+        margin-top: 20px;
+    }
 
 	.information > * {
 		max-width: 600px;

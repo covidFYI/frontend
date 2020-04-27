@@ -54,8 +54,8 @@ export default class HomeContainer extends Component {
                         <img src="/assets/peoplecovid1.svg" width=""/>
                     </div>
                     <div className="banner-text">
-                        <span>All the help and details about</span>
-                        <span>COVID-19, in one place.</span>
+                        <span>Find consolidated information for help related to Covid-19.</span>
+                        <span className="tag">#together_we_can </span>
                     </div>
 				</div>
 				<div className="search">
