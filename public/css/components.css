@@ -324,6 +324,22 @@ div.dropdown-navigation a.nav-item:hover {
 	color: var(--light-gray);
 }
 
+.location-text {
+	font-size: 1rem;
+	color: #7a7a7a;
+	margin-top: 16px;
+}
+
+/* .option-active {
+	color: var(--light-gray) !important;  
+	background-color: var(--accent);
+}
+
+.options > li:hover .option-active {
+	color: var(--accent);
+	background-color: var(--search-bg-active);
+} */
+
 .news-stats {
 	display: flex;
 	margin-top: 100px;

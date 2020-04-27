@@ -18,11 +18,10 @@ export class Autocomplete extends Component {
   // }
 
   onBlur = (e) => {
-      this.props.focusHandler ? this.props.focusHandler(false) : null
-  }
+    this.props.focusHandler ? this.props.focusHandler(false) : null;
+  };
 
   onChange = (e) => {
-
     const { options } = this.props;
     const userInput = e.currentTarget.value;
 
@@ -47,18 +46,18 @@ export class Autocomplete extends Component {
       userInput: e.currentTarget.innerText,
     });
 
-    this.props.getSelectedState(e.currentTarget.innerText)
+    this.props.getSelectedState(e.currentTarget.innerText);
   };
   onKeyDown = (e) => {
     const { activeOption, filteredOptions } = this.state;
 
-    if (e.keyCode === 13 || e.keyCode === 9) {
+    if (e.keyCode === 13) {
       this.setState({
         activeOption: 0,
         showOptions: false,
         userInput: filteredOptions[activeOption],
       });
-      this.props.getSelectedState(filteredOptions[activeOption])
+      this.props.getSelectedState(filteredOptions[activeOption]);
     } else if (e.keyCode === 38) {
       if (activeOption === 0) {
         return;
@@ -71,6 +70,25 @@ export class Autocomplete extends Component {
       }
       this.setState({ activeOption: activeOption + 1 });
     }
+  };
+
+  success = (position) => {
+    fetch(
+      `https://api.covidfyi.in/v1/locate?lat=${position.coords.latitude}&lon=${position.coords.longitude}`
+    )
+      .then((response) => {
+        console.log(
+          response.json().then((resp) => {
+            console.log(resp.geoplugin_region);
+            this.setState({ userInput: resp.geoplugin_region })
+            this.props.getSelectedState(this.state.userInput);
+          })
+        );
+      })
+  };
+
+  gpsLocHandler = () => {
+    navigator.geolocation.getCurrentPosition(this.success);    
   };
 
   render() {
@@ -124,7 +142,11 @@ export class Autocomplete extends Component {
             // onFocus={onFocus}
             // onBlur={onBlur}
           />
-          <img className="submit-arrow" src="/assets/arrow.svg" />
+          <img
+            className="submit-arrow"
+            src="/assets/target.svg"
+            onClick={this.gpsLocHandler}
+          />
         </div>
         {optionList}
       </React.Fragment>

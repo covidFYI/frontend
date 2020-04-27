@@ -39,7 +39,7 @@ export default class Content extends Component {
 					<MobileContent initialProps={this.props.initialProps} />
 				</div>
 				<div className="hide-991">
-					<SearchContainer getSelectedState={this.getSelectedState} />
+					<SearchContainer getSelectedState={this.getSelectedState} currentState={this.state.stateSelected} />
 					{this.state.showInfoTypes ? (
 						<Categories state={this.state.stateSelected} />
 					) : null}

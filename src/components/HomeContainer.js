@@ -59,7 +59,7 @@ export default class HomeContainer extends Component {
                     </div>
 				</div>
 				<div className="search">
-					<SearchContainer focusHandler={this.focusHandler} getSelectedState={this.getSelectedState} />
+					<SearchContainer focusHandler={this.focusHandler} getSelectedState={this.getSelectedState} currentState={this.state.stateSelected} />
                     {this.state.showInfoTypes ? <Categories state={this.state.stateSelected} /> : null}
 				</div>
                 <div className="infograph">
