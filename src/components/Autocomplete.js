@@ -93,7 +93,7 @@ export class Autocomplete extends Component {
               state = geoPluginMapping[key]
             }
           }
-          this.setState({ userInput: state });
+          this.setState({ userInput: state, showOptions: false });
           this.props.getSelectedState(this.state.userInput);
         })
       );
