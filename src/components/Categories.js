@@ -7,12 +7,12 @@ export default class Categories extends Component {
         count: 0
     }
 
-    componentDidMount() {
-        this.componentDidUpdate()
-    }
+    // componentDidMount() {
+    //     this.componentDidUpdate()
+    // }
 
-    componentDidUpdate() {
-        if (this.state.count < 10) {
+    componentWillMount() {
+        // if (this.state.count < 10) {
             const url = `https://api.covidfyi.in/v1/state/${this.props.state}`;
 
             fetch(url)
@@ -21,7 +21,7 @@ export default class Categories extends Component {
                     categories: [... new Set(data.results.map(data => data.category))],
                     count: this.state.count + 1
                 }))
-        }
+        // }
     }
 
     render() {
