@@ -1,6 +1,14 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 
+const geoPluginMapping = {
+  NCT: "Delhi",
+  "Andaman and Nicobar Islands": "Andaman and Nicobar",
+  Kashmir: "Jammu and Kashmir",
+  Laccadives: "Lakshadweep",
+  Pondicherry: "Puducherry",
+};
+
 export class Autocomplete extends Component {
   static propTypes = {
     options: PropTypes.instanceOf(Array).isRequired,
@@ -75,20 +83,25 @@ export class Autocomplete extends Component {
   success = (position) => {
     fetch(
       `https://api.covidfyi.in/v1/locate?lat=${position.coords.latitude}&lon=${position.coords.longitude}`
-    )
-      .then((response) => {
-        console.log(
-          response.json().then((resp) => {
-            console.log(resp.geoplugin_region);
-            this.setState({ userInput: resp.geoplugin_region })
-            this.props.getSelectedState(this.state.userInput);
-          })
-        );
-      })
+    ).then((response) => {
+      console.log(
+        response.json().then((resp) => {
+          console.log(resp.geoplugin_region);
+          let state = resp.geoplugin_region
+          for (let key in geoPluginMapping) {
+            if (state === key){
+              state = geoPluginMapping[key]
+            }
+          }
+          this.setState({ userInput: state });
+          this.props.getSelectedState(this.state.userInput);
+        })
+      );
+    });
   };
 
   gpsLocHandler = () => {
-    navigator.geolocation.getCurrentPosition(this.success);    
+    navigator.geolocation.getCurrentPosition(this.success);
   };
 
   render() {
@@ -112,7 +125,12 @@ export class Autocomplete extends Component {
                 className = "option-active";
               }
               return (
-                <li tabIndex={index} className={className} key={optionName} onClick={onClick}>
+                <li
+                  tabIndex={index}
+                  className={className}
+                  key={optionName}
+                  onClick={onClick}
+                >
                   {optionName}
                 </li>
               );
