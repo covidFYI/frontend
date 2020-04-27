@@ -22,7 +22,7 @@ export default class HospitalsStats extends PureComponent {
     render() {
 
         return (
-            <div style={{ width: '90%', height: 600 }}>
+            <div style={{ width: '100%', height: this.props.height ? this.props.height : 600 }}>
                 <h5>Hospitals Statistics</h5>
                 <ResponsiveContainer>
                     <BarChart

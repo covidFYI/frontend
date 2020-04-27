@@ -28,9 +28,9 @@ export default class Categories extends Component {
         const iconMapping = {
             Doctor: "icon-doctor.svg",
             Government: "icon-govt-officers.svg",
-            Helpline: "icon-call.svg",
+            Helplines: "icon-call.svg",
             Hospitals: "icon-hospital.svg",
-            Laboratory: "icon-labs.svg",
+            Laboratories: "icon-labs.svg",
             "Fever Clinics": "icon-fever.svg",
             "Quarantine Facility": "icon-quarantine.svg",
         };

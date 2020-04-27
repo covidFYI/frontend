@@ -9,7 +9,7 @@ export default class LaboratoryStats extends PureComponent {
         stats: []
     }
     componentDidMount() {
-        fetch('https://api.covidfyi.in/v1/categories/Laboratory/total')
+        fetch('https://api.covidfyi.in/v1/categories/Laboratories/total')
             .then(res => res.json())
             .then(data => {
                 this.setState({
@@ -22,7 +22,7 @@ export default class LaboratoryStats extends PureComponent {
     render() {
 
         return (
-            <div style={{ width: '100%', height: 1200 }}>
+            <div style={{ width: '100%', height: 1500 }}>
                 <h5>Laboratory Statistics</h5>
                 <ResponsiveContainer>
                     <BarChart

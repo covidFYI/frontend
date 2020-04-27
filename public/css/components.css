@@ -238,7 +238,7 @@ div.dropdown-navigation a.nav-item:hover {
 	font-weight: 500;
 	font-size: 1.4em;
 	color: var(--accent);
-	margin-top: 10rem;
+	margin-top: 5rem;
 }
 
 .search-container {
@@ -557,7 +557,8 @@ div.dropdown-navigation a.nav-item:hover {
 	font-weight: 600;
 	font-size: 1rem;
 	justify-self: center;
-	color: var(--accent);
+    color: var(--accent);
+    text-align: center;
 }
 .category-icon {
     width: 40px
@@ -710,6 +711,7 @@ a.social-media-link {
     top: 70px;
     left: 0;
     padding: 10px;
+    min-height: 150px;
 }
 
 @media only screen and (max-width: 1230px) {
@@ -762,7 +764,14 @@ a.social-media-link {
         padding: 1em;
         width: calc(100vw - 1em);
 		box-sizing: border-box;
-	}
+    }
+    
+    .footer {
+        position: absolute;
+    }
+    .tabs-content {
+        padding-bottom: 12rem;
+    }
 }
 
 @media only screen and (max-width: 870px) {
