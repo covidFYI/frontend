@@ -4,6 +4,9 @@ import SearchContainer from "../components/SearchContainer";
 import Categories from "../components/Categories";
 import MobileContent from "./MobileContent";
 import NewsContainer from "./NewsContainer";
+import OverallStats from "./OverallStats";
+import HospitalsStats from "./HospitalsStats";
+import LaboratoryStats from "./LaboratoryStats";
 
 export default class Content extends Component {
 	state = {
@@ -39,13 +42,36 @@ export default class Content extends Component {
 					<MobileContent initialProps={this.props.initialProps} />
 				</div>
 				<div className="hide-991">
-					<SearchContainer getSelectedState={this.getSelectedState} currentState={this.state.stateSelected} />
-					{this.state.showInfoTypes ? (
-						<Categories state={this.state.stateSelected} />
-					) : null}
-					<div className="news-stats">
-						<NewsContainer initialProps={this.props.initialProps} />
-						<InformationComponent />
+					<div className="desktop-content">
+						<div className="banner">
+							<div className="banner-image">
+								<img src="/assets/peoplecovid1.svg" width="" />
+							</div>
+							<div className="banner-text">
+								<span>All the help and details about</span>
+								<span>COVID-19, in one place.</span>
+							</div>
+						</div>
+						<div className="card">
+							<OverallStats height={200}/>
+						</div>
+						<div className="feature-wrapper">
+							<div className="feature-content">
+								<div className="infograph">
+									<img src="/assets/b.svg" />
+								</div>
+								<div className="search-feature">
+									<SearchContainer getSelectedState={this.getSelectedState} />
+									{this.state.showInfoTypes ? (
+										<Categories state={this.state.stateSelected} />
+									) : null}
+								</div>
+							</div>
+						</div>
+						<div className="news-stats card">
+							<h5>Latest news</h5>
+							<NewsContainer initialProps={this.props.initialProps} />
+						</div>
 					</div>
 				</div>
 			</div>

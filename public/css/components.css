@@ -243,7 +243,7 @@ div.dropdown-navigation a.nav-item:hover {
 
 .search-container {
 	position: relative;
-	min-width: 540px;
+    max-width: 600px;
 	margin: 12px auto;
 }
 
@@ -342,7 +342,7 @@ div.dropdown-navigation a.nav-item:hover {
 
 .news-stats {
 	display: flex;
-	margin-top: 100px;
+	margin-top: 30px;
 }
 
 .news:hover {
@@ -530,21 +530,21 @@ div.dropdown-navigation a.nav-item:hover {
 .categories-grid {
 	display: grid;
 	margin: 50px auto;
-	grid-template-columns: repeat(auto-fit, 100px);
-	grid-auto-rows: 100px;
+	grid-template-columns: repeat(auto-fit, 120px);
+	grid-auto-rows: 120px;
 	justify-content: center;
 	place-items: center;
-	flex-wrap: wrap;
+    flex-wrap: wrap;
+    grid-gap: 20px;
 }
 
 .category {
-	display: grid;
-	grid-template-columns: 80px;
-	grid-template-rows: 80px 20px;
-	place-items: center;
-	justify-content: center;
+	display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 	width: 100%;
-	height: 100%;
+    height: 100%;
+    place-items: center;
 }
 
 .category.link {
@@ -569,7 +569,7 @@ div.dropdown-navigation a.nav-item:hover {
 
 .data-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-auto-rows: auto;
     grid-gap: 20px;
     padding: 0 10px;
@@ -580,7 +580,8 @@ div.dropdown-navigation a.nav-item:hover {
 	box-shadow: var(--box-shadow);
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
+    justify-content: space-between;
+    max-width: 300px;
 }
 
 .data-card .info > *,

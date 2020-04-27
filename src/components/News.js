@@ -8,7 +8,7 @@ const News = (props) => {
 					<img src={props.data.img} />
 				</div>
 				<div className="news-info">
-					<h5>{props.data.title}</h5>
+					<h6>{props.data.title}</h6>
 				</div>
 			</div>
 		</a>
