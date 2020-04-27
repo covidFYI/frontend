@@ -7,11 +7,11 @@ export default class Categories extends Component {
         count: 0
     }
 
-    // componentDidMount() {
-    //     this.componentDidUpdate()
-    // }
+    componentDidMount() {
+        this.componentDidUpdate()
+    }
 
-    componentWillMount() {
+    componentDidUpdate() {
         // if (this.state.count < 10) {
             const url = `https://api.covidfyi.in/v1/state/${this.props.state}`;
 
