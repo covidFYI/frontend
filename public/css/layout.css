@@ -265,6 +265,10 @@
     padding: 0 10px
 }
 
+.category-menu {
+    padding: 2rem 0
+}
+
 .selected-category {
     color: var(--accent);
     font-size: 1.1em;
