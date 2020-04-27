@@ -31,14 +31,18 @@ export default class HomeContainer extends Component {
     
     componentDidMount() {
         let input = document.querySelector('.search-input')
+        let infograph = document.querySelector('.infograph')
         let searchPanel = document.querySelector('.search')
         input.addEventListener('focus', () => {
-            searchPanel.classList.add('expand')
+            searchPanel.classList.add('expand');
+            infograph.style.visibility= "hidden";
         })
 
         let homeTab = document.querySelector('.home-tab');
         homeTab.addEventListener('click', () => {
-            searchPanel.classList.remove('expand')
+            searchPanel.classList.remove('expand');
+            infograph.style.visibility = "visible";
+
         })
     }
 

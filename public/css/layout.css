@@ -28,7 +28,6 @@
 .tabbed-navigation {
     margin-bottom: 30px;
     width: 100vw;
-    overflow-x: hidden
 }
 
 .tabs {
@@ -148,3 +147,4 @@
     width: 100px;
     height: 100px;
 }
+

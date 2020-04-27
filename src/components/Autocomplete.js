@@ -87,14 +87,14 @@ export class Autocomplete extends Component {
     if (showOptions && userInput) {
       if (filteredOptions.length) {
         optionList = (
-          <ul className="options">
+          <ul className="options" tabIndex="0">
             {filteredOptions.map((optionName, index) => {
               let className;
               if (index === activeOption) {
                 className = "option-active";
               }
               return (
-                <li className={className} key={optionName} onClick={onClick}>
+                <li tabIndex={index} className={className} key={optionName} onClick={onClick}>
                   {optionName}
                 </li>
               );

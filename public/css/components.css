@@ -232,9 +232,8 @@ div.dropdown-navigation a.nav-item:hover {
 .heading {
 	font-style: normal;
 	font-weight: 500;
-	font-size: 2rem;
+	font-size: 1.4em;
 	color: var(--accent);
-	line-height: 65px;
 	margin-top: 54px;
 }
 
@@ -678,16 +677,14 @@ a.social-media-link {
     box-sizing: border-box;
     width: calc(100% - 10px);
     background: #fff;
-    padding: 10px;
-    transition: 0.3s ease
+    /* transition: 0.3s ease */
 }
 .show-991 .search.expand {
     position: absolute;
     width: calc(100% - 10px);
     top: 70px;
     left: 0;
-    height: 55vh;
-
+    padding: 10px;
 }
 
 @media only screen and (max-width: 1230px) {
@@ -787,9 +784,6 @@ a.social-media-link {
 	}
 
 	.heading {
-		font-family: Roboto;
-		font-size: 16px;
-		line-height: 19px;
 		margin-top: 14px;
 	}
 
@@ -826,7 +820,11 @@ a.social-media-link {
 
 	.options {
 		/* top: 60px; */
-	}
+    }
+    .options li.option-active {
+        background-color: var(--accent);
+        color: #fff;
+    }
 
 	.options > li {
 		padding: 10px;
