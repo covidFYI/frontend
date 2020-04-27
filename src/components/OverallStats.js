@@ -49,7 +49,7 @@ export default class OverallStats extends PureComponent {
                 <h5>Overall Statistics</h5>
                 <ResponsiveContainer>
                     <PieChart>
-                        <Pie dataKey="value" data={this.state.stats} label datakey="total">
+                        <Pie dataKey="value" data={this.state.stats} label datakey="total" isAnimationActive={false}>
                             <Cell fill={COLORS[0]} label/>
                             <Cell fill={COLORS[1]} />
                             <Cell fill={COLORS[2]} />

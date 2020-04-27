@@ -33,13 +33,14 @@ export default class HospitalsStats extends PureComponent {
                         margin={{
                             top: 20, right: 30, left: 20, bottom: 5,
                         }}
+                        animationEnabled="false"
                     >
                         <CartesianGrid strokeDasharray="3 3" />
                         <XAxis type="number" domain={[0, 'dataMax + 10']} />
                         <YAxis dataKey="state" type="category" />
                         <Tooltip />
                         <Legend />
-                        <Bar dataKey="total" fill="#16928e" />
+                        <Bar dataKey="total" fill="#16928e" isAnimationActive={false} />
                     </BarChart>
                 </ResponsiveContainer>
             </div>
