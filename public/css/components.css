@@ -10,14 +10,18 @@
 		0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06);
 }
 
+body  {
+    overflow-x: hidden;
+}
+
 .footer {
 	display: flex;
 	flex-direction: column;
 	width: 100%;
-	position: absolute;
+	position: fixed;
 	/* margin-top: auto; */
 	font-size: 1rem;
-	height: 1.5rem;
+	height: auto;
 	bottom: 0;
 	margin-bottom: 0;
 }
@@ -510,8 +514,8 @@ div.dropdown-navigation a.nav-item:hover {
 .categories-grid {
 	display: grid;
 	margin: 50px auto;
-	grid-template-columns: repeat(auto-fit, 150px);
-	grid-auto-rows: 150px;
+	grid-template-columns: repeat(auto-fit, 100px);
+	grid-auto-rows: 100px;
 	justify-content: center;
 	place-items: center;
 	flex-wrap: wrap;
@@ -519,8 +523,8 @@ div.dropdown-navigation a.nav-item:hover {
 
 .category {
 	display: grid;
-	grid-template-columns: 100px;
-	grid-template-rows: 100px 20px;
+	grid-template-columns: 80px;
+	grid-template-rows: 80px 20px;
 	place-items: center;
 	justify-content: center;
 	width: 100%;
@@ -538,6 +542,9 @@ div.dropdown-navigation a.nav-item:hover {
 	font-size: 1rem;
 	justify-self: center;
 	color: var(--accent);
+}
+.category-icon {
+    width: 40px
 }
 
 .stats-flex > * {
@@ -656,8 +663,9 @@ a.social-media-link {
     width: 100%
 }
 
-.infograph {
-    /* padding-top: 140px; */
+.show-991 .infograph {
+    margin-top: 2rem;
+    padding-bottom: 15em;
 }
 
 .infograph > img  {
