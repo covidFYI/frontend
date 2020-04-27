@@ -5,9 +5,9 @@ import NavigationBar from '../../components/NavigationBar'
 import SearchBar from "../../components/SearchBar";
 import Categories from '../../components/Categories';
 import CategoryData from '../../components/CategoryData';
+import Dropdown from '../../components/Dropdown';
 import Link from 'next/link'
 
-   
 
 
 const State = () => {
@@ -21,16 +21,24 @@ const State = () => {
     //     window.scrollTo(0, myRef.current.offsetTop)
     // })
 
-
+    
     return (
         <div>
             <NavigationBar />
             <div className="container">
                 <div className="content">
                     {/* <SearchBar /> */}
-                    <Categories state={state} category={category} />
+                    {/* <Categories state={state} category={category} /> */}
                     {/* Just for Scrolling */}
                     {/* <div ref={myRef}></div> */}
+                    {/* 
+                        We need to add drop down here so removed categories component from here and added dropdown
+                        
+                        Also when you update the code with localstorage support update the dropdown component too so that it can fetch data from the localstorage.
+                    */}
+                    <div className="category-menu">
+                        <Dropdown category={category} state={state} />
+                    </div>
                     <div className="breadcrumbs">
                         <Link href="/" as="/"><a>Home</a></Link>
                         <img src="/assets/breadcrum-arrow.svg" />

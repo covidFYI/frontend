@@ -320,7 +320,8 @@ div.dropdown-navigation a.nav-item:hover {
 	border-top: none;
 	box-sizing: border-box;
 	max-height: 300px;
-	overflow: auto;
+    overflow: auto;
+    z-index: 7;
 }
 
 .options > li {
@@ -587,7 +588,7 @@ div.dropdown-navigation a.nav-item:hover {
     grid-auto-rows: auto;
     grid-gap: 20px;
     padding: 0 10px;
-    padding-bottom: 100px;
+    padding-bottom: 15rem;
 }
 
 .data-card {
@@ -643,7 +644,8 @@ div.dropdown-navigation a.nav-item:hover {
 
 .data-card .email {
 	font-size: 0.8rem;
-	color: var(--gray);
+    color: var(--gray);
+    word-break: break-all;
 }
 
 .button-group {

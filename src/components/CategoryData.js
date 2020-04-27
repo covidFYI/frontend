@@ -52,7 +52,7 @@ const CategoryData = (props) => {
                                     </a> : null}
                                     
                                 </div>
-                                {dataUnit.sourceurl ? <a className="source-link" href={dataUnit.sourceurl}>Source link</a> : null}
+                                {dataUnit.sourceurl ? <a className="source-link" target="_blank" href={dataUnit.sourceurl}>Source link</a> : null}
                             </div>
                         </div>
                     )
