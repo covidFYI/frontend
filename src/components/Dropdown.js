@@ -19,7 +19,10 @@ export default class Dropdown extends Component {
     }
 
     componentDidMount() {
-
+        let dropdown = document.querySelector('.dropdown-menu');
+        dropdown.addEventListener('click', () => {
+            document.querySelector('.dropdown-navigation').classList.toggle('show-dropdown');
+        })
     }
     render() {
         const iconMapping = {

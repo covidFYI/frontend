@@ -235,9 +235,9 @@
     position: relative;
     cursor: pointer;
 }
-.dropdown-menu:hover > .dropdown-navigation {
+/* .dropdown-menu:hover > .dropdown-navigation {
     display: flex;
-}
+} */
 .dropdown-menu .selected-item {
     padding: 10px 20px;
     display: flex;
