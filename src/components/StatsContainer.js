@@ -13,7 +13,7 @@ export default class StatsContainer extends Component {
                 <OverallStats />
                 {/* <StatewiseCovidStats/> */}
                 <h5>Covid Cases (Past 2 Weeks)</h5>
-                <CovidHistoryChart width={400} />
+                <CovidHistoryChart width={370} />
                 <HospitalsStats />
                 <LaboratoryStats />
             </div>
