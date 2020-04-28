@@ -582,6 +582,10 @@ div.dropdown-navigation a.nav-item:hover {
     margin-bottom: 70px;
 }
 
+.pie-area {
+    display: flex;
+}
+
 .data-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));

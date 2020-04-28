@@ -47,7 +47,7 @@ export default class OverallStats extends PureComponent {
         const COLORS = ['#8c0882', '#1f138c', '#fca37e']
         return (
             <div style={{ width: '100%', height: this.props.height ? this.props.height : 300 }} className="overall-stats">
-                <h5>Overall Statistics (India)</h5>
+                {this.props.enableLink ? <h5>Overall Statistics (India)</h5> : null}
                 {this.props.enableLink ? <Link href="/statistics"><a className="stats-link">view more</a></Link> : null}
                 <ResponsiveContainer>
                     <PieChart>

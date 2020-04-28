@@ -1,0 +1,94 @@
+{
+    "results": [
+        {
+            "Confirmed": "10454",
+            "Deaths": "359",
+            "Recovered": "1198",
+            "date": "13 April"
+        },
+        {
+            "Confirmed": "11485",
+            "Deaths": "396",
+            "Recovered": "1365",
+            "date": "14 April"
+        },
+        {
+            "Confirmed": "12371",
+            "Deaths": "423",
+            "Recovered": "1509",
+            "date": "15 April"
+        },
+        {
+            "Confirmed": "13432",
+            "Deaths": "449",
+            "Recovered": "1767",
+            "date": "16 April"
+        },
+        {
+            "Confirmed": "14354",
+            "Deaths": "487",
+            "Recovered": "2040",
+            "date": "17 April"
+        },
+        {
+            "Confirmed": "15725",
+            "Deaths": "522",
+            "Recovered": "2466",
+            "date": "18 April"
+        },
+        {
+            "Confirmed": "17305",
+            "Deaths": "560",
+            "Recovered": "2854",
+            "date": "19 April"
+        },
+        {
+            "Confirmed": "18544",
+            "Deaths": "593",
+            "Recovered": "3273",
+            "date": "20 April"
+        },
+        {
+            "Confirmed": "20081",
+            "Deaths": "646",
+            "Recovered": "3976",
+            "date": "21 April"
+        },
+        {
+            "Confirmed": "21373",
+            "Deaths": "682",
+            "Recovered": "4370",
+            "date": "22 April"
+        },
+        {
+            "Confirmed": "23040",
+            "Deaths": "722",
+            "Recovered": "5012",
+            "date": "23 April"
+        },
+        {
+            "Confirmed": "24448",
+            "Deaths": "781",
+            "Recovered": "5496",
+            "date": "24 April"
+        },
+        {
+            "Confirmed": "26283",
+            "Deaths": "825",
+            "Recovered": "5938",
+            "date": "25 April"
+        },
+        {
+            "Confirmed": "27890",
+            "Deaths": "881",
+            "Recovered": "6523",
+            "date": "26 April"
+        },
+        {
+            "Confirmed": "29458",
+            "Deaths": "939",
+            "Recovered": "7137",
+            "date": "27 April"
+        }
+    ]
+}

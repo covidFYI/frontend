@@ -4,6 +4,7 @@ import OverallStats from './OverallStats'
 import StatewiseCovidStats from './StatewiseCovidStats';
 import LaboratoryStats from './LaboratoryStats';
 import HospitalsStats from './HospitalsStats';
+import CovidHistoryChart from './CovidHistoryChart';
 
 export default class StatsContainer extends Component {
     render() {
@@ -11,6 +12,7 @@ export default class StatsContainer extends Component {
             <div className="stats-flex">
                 <OverallStats />
                 {/* <StatewiseCovidStats/> */}
+                <CovidHistoryChart width={400} />
                 <HospitalsStats />
                 <LaboratoryStats />
             </div>
