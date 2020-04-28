@@ -53,19 +53,25 @@ export default class Content extends Component {
 							</div>
 						</div>
 						<div className="card">
-							<OverallStats height={200} enableLink={true}/>
+							<OverallStats height={200} enableLink={true} />
 						</div>
 						<div className="feature-wrapper">
-							<div className="feature-content">
-								<div className="infograph">
-									<img src="/assets/wordCloud(1).svg" />
+							<div className="features">
+								<div className="feature-content">
+									<div className="infograph">
+										<img src="/assets/wordCloud(1).svg" />
+									</div>
+									<div className="search-feature">
+										<SearchContainer getSelectedState={this.getSelectedState} />
+										{this.state.showInfoTypes ? (
+											<Categories state={this.state.stateSelected} />
+										) : null}
+
+									</div>
 								</div>
-								<div className="search-feature">
-									<SearchContainer getSelectedState={this.getSelectedState} />
-									{this.state.showInfoTypes ? (
-										<Categories state={this.state.stateSelected} />
-									) : null}
-								</div>
+							</div>
+							<div className="">
+								<InformationComponent />
 							</div>
 						</div>
 						<div className="news-stats card">

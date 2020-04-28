@@ -21,7 +21,11 @@ export default class Dropdown extends Component {
     componentDidMount() {
         let dropdown = document.querySelector('.dropdown-menu');
         dropdown.addEventListener('click', () => {
-            document.querySelector('.dropdown-navigation').classList.toggle('show-dropdown');
+            document.querySelector('.dropdown-navigation').classList.add('show-dropdown');
+        })
+
+        dropdown.addEventListener('blur', () => {
+            document.querySelector('.dropdown-navigation').classList.remove('show-dropdown');
         })
     }
     render() {

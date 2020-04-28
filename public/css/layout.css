@@ -157,12 +157,17 @@
     background-color: #fff;
     border-radius: 25px 25px 0 0;
     height: 100%;
+}
+
+.features {
     box-shadow: var(--box-shadow);
+    background: #fff;
+    height: 100%;
 }
 
 .hide-991 .infograph {
     margin-top: 3rem;
-    margin-left: 3rem;
+    margin-left: -1rem;
     max-width: 500px;
 }
 
@@ -177,6 +182,7 @@
 }
 .feature-content {
     position: relative;
+    min-height: 60vh;
 }
 .feature-wrapper {
     background-color: var(--accent);
@@ -186,7 +192,7 @@
     display: grid;
     grid-template-columns: 65% 35%;
     grid-column-gap: 1rem;
-    padding-bottom: 13rem;
+    padding-bottom: 30rem;
     grid-template-rows: 300px 65vh;
 }
 

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import SearchContainer from "./SearchContainer";
 import Categories from './Categories'
+import InformationComponent from "./InformationComponent";
 
 export default class HomeContainer extends Component {
 
@@ -64,6 +65,9 @@ export default class HomeContainer extends Component {
 				</div>
                 <div className="infograph">
                     <img src="/assets/wordCloud(1).svg" />
+                </div>
+                <div className="">
+                    <InformationComponent/>
                 </div>
 			</div>
 		);

@@ -141,7 +141,7 @@ div.dropdown-navigation a.nav-item:hover {
 	display: flex;
 	justify-content: space-between;
 	flex-wrap: wrap;
-	padding: 2rem;
+	padding: 3rem 1rem;
 }
 .contact {
 	display: flex;
@@ -170,16 +170,20 @@ div.dropdown-navigation a.nav-item:hover {
 }
 
 .statistics {
-     display: flex;
+	width: 100%;
+	display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
 .statistics-info {
 	display: grid;
-	grid-template-columns: 120px 120px;
-	grid-template-rows: 120px 120px;
+	grid-template-columns: repeat(auto-fit, 120px);
+	justify-content: center;
+	grid-template-rows: 120px;
+	grid-auto-rows: 120px;
 	grid-gap: 20px;
+	width: 100%;
 }
 
 .contact-number,
@@ -211,6 +215,7 @@ div.dropdown-navigation a.nav-item:hover {
 
 .stat--label {
 	text-align: center;
+	max-width: 25ch;
 }
 
 .stat.info .stat--label,
@@ -706,12 +711,17 @@ a.social-media-link {
 
 .show-991 .infograph {
     margin-top: 5rem;
-    padding-bottom: 15em;
     width: 100%;
 }
 
 .infograph > img  {
     width: 80%;
+}
+
+.information {
+	width: 100%;
+	box-sizing: border-box;
+	position: absolute;
 }
 
 .banner-text {
@@ -786,6 +796,10 @@ a.social-media-link {
 		display: flex;
 	}
 
+	.statistics-info {
+		grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+	}
+
 	nav .logo img {
 		width: 25vw;
 	}
@@ -800,7 +814,12 @@ a.social-media-link {
     }
     .search {
         margin-top: 20px;
-    }
+	}
+	.information {
+		position: relative;
+		display: flex;
+		justify-content: center;
+	}
 
 	.information > * {
 		max-width: 600px;
