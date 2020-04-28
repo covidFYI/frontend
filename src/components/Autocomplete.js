@@ -54,6 +54,7 @@ export class Autocomplete extends Component {
       userInput: e.currentTarget.innerText,
     });
 
+    localStorage.setItem('stateHistory', e.currentTarget.innerText)
     this.props.getSelectedState(e.currentTarget.innerText);
   };
   onKeyDown = (e) => {
@@ -65,6 +66,7 @@ export class Autocomplete extends Component {
         showOptions: false,
         userInput: filteredOptions[activeOption],
       });
+      localStorage.setItem('stateHistory', filteredOptions[activeOption])
       this.props.getSelectedState(filteredOptions[activeOption]);
     } else if (e.keyCode === 38) {
       if (activeOption === 0) {
@@ -94,6 +96,7 @@ export class Autocomplete extends Component {
             }
           }
           this.setState({ userInput: state, showOptions: false });
+          localStorage.setItem('stateHistory', this.state.userInput)
           this.props.getSelectedState(this.state.userInput);
         })
       );
@@ -103,6 +106,11 @@ export class Autocomplete extends Component {
   gpsLocHandler = () => {
     navigator.geolocation.getCurrentPosition(this.success);
   };
+
+  componentDidMount() {
+    window.localStorage.getItem('stateHistory') ? this.setState({ userInput: window.localStorage.getItem('stateHistory') }) : null;
+    this.props.getSelectedState(window.localStorage.getItem('stateHistory'))
+  }
 
   render() {
     const {
