@@ -1,23 +1,38 @@
-import React, { Component } from 'react';
-import Link from 'next/link';
+import React, { Component } from "react";
+import Link from "next/link";
+import { initGA, logPageView } from "../utils/analytics";
 
 export default class NavigationBar extends Component {
-    componentDidMount() {
-        // const hamburgerButton = document.querySelector('.hamburger-menu');
-        // const hamburgerMenu = document.querySelector('.dropdown-navigation');
-        // hamburgerButton.addEventListener('click', () => {
-        //     hamburgerMenu.classList.toggle('show-dropdown')
-        // })
+  componentDidMount() {
+    // const hamburgerButton = document.querySelector('.hamburger-menu');
+    // const hamburgerMenu = document.querySelector('.dropdown-navigation');
+    // hamburgerButton.addEventListener('click', () => {
+    //     hamburgerMenu.classList.toggle('show-dropdown')
+    // })
+
+    if (!window.GA_INITIALIZED) {
+      initGA();
+      window.GA_INITIALIZED = true;
     }
-    render() {
-        return (
-            <nav>
-                <Link href="/">
-                    <a className="logo">
-                        <img src="/assets/logo.svg"></img>
-                    </a>
-                </Link>
-                {/* <ul className="nav-items hide-991">
+    logPageView();
+  }
+
+  componentDidUpdate() {
+    if (!window.GA_INITIALIZED) {
+      initGA();
+      window.GA_INITIALIZED = true;
+    }
+    logPageView();
+  }
+  render() {
+    return (
+      <nav>
+        <Link href="/">
+          <a className="logo">
+            <img src="/assets/logo.svg"></img>
+          </a>
+        </Link>
+        {/* <ul className="nav-items hide-991">
                     <li className="nav-item active">
                         <Link href="">
                             <a className="link">
@@ -61,7 +76,7 @@ export default class NavigationBar extends Component {
                         </Link>
                     </li>
                 </ul> */}
-                {/* <div className="show-991 hamburger-menu">
+        {/* <div className="show-991 hamburger-menu">
                     <img src="/assets/hamburger.svg" className="hamburger-button" />
                     <div className="dropdown-navigation">
                         <Link href="">
@@ -96,7 +111,7 @@ export default class NavigationBar extends Component {
                         </Link>
                     </div>
                 </div> */}
-            </nav>
-        )
-    }
+      </nav>
+    );
+  }
 }
