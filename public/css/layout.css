@@ -133,7 +133,8 @@
 .news {
     display: flex;
     margin: 20px 0;
-    background: var(--light-gray);
+    background: rgb(82, 104, 231, 0.1);
+    
     border-radius: 5px;
     overflow: hidden;
 }

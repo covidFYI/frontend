@@ -603,6 +603,10 @@ div.dropdown-navigation a.nav-item:hover {
     max-width: 300px;
 }
 
+.data-card:hover, .data-card:active {
+    background: rgb(82, 104, 231, 0.1);
+}
+
 .data-card .info > *,
 .data-card .cta {
 	padding: 10px 20px;
