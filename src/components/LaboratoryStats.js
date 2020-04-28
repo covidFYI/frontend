@@ -39,7 +39,7 @@ export default class LaboratoryStats extends PureComponent {
                         <YAxis dataKey="state" type="category" />
                         <Tooltip />
                         <Legend />
-                        <Bar dataKey="total" fill="#ff9d00" isAnimationActive={false} >
+                        <Bar dataKey="total" fill="#FF8C76" isAnimationActive={false} >
                             {/* <LabelList dataKey="state" position="right" /> */}
                         </Bar>
                     </BarChart>

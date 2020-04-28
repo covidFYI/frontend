@@ -587,8 +587,23 @@ div.dropdown-navigation a.nav-item:hover {
     margin-bottom: 70px;
 }
 
+.stats-flex h5 {
+    margin-left: 3rem;
+    margin-bottom: 1.2rem;
+}
+
 .pie-area {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, 550px);
+    justify-content: center;
+}
+
+.overall-stats-chart h5 {
+    margin-left: 5rem;
+}
+
+.overall-stats-chart div {
+    margin-top: 8rem;
 }
 
 .data-grid {

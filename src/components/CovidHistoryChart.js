@@ -51,24 +51,24 @@ export default class CovidHistoryChart extends PureComponent {
           <Tooltip />
           <Area
             type="monotone"
+            dataKey="Recovered"
+            stackId="1"
+            stroke="#51B768"
+            fill="#51B768"
+          />
+          <Area
+            type="monotone"
             dataKey="Confirmed"
             stackId="1"
-            stroke="#8884d8"
-            fill="#8884d8"
+            stroke="#7F7BC9"
+            fill="#7F7BC9"
           />
           <Area
             type="monotone"
             dataKey="Deaths"
             stackId="1"
-            stroke="#82ca9d"
-            fill="#82ca9d"
-          />
-          <Area
-            type="monotone"
-            dataKey="Recovered"
-            stackId="1"
-            stroke="#ffc658"
-            fill="#ffc658"
+            stroke="#FF1041"
+            fill="#FF1041"
           />
         </AreaChart>
       </div>

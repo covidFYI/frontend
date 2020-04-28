@@ -12,6 +12,7 @@ export default class StatsContainer extends Component {
             <div className="stats-flex">
                 <OverallStats />
                 {/* <StatewiseCovidStats/> */}
+                <h5>Covid Cases (Past 2 Weeks)</h5>
                 <CovidHistoryChart width={400} />
                 <HospitalsStats />
                 <LaboratoryStats />

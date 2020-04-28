@@ -40,7 +40,7 @@ export default class HospitalsStats extends PureComponent {
                         <YAxis dataKey="state" type="category" />
                         <Tooltip />
                         <Legend />
-                        <Bar dataKey="total" fill="#16928e" isAnimationActive={false} />
+                        <Bar dataKey="total" fill="#7F7BC9" isAnimationActive={false} />
                     </BarChart>
                 </ResponsiveContainer>
             </div>
