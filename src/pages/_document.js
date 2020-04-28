@@ -11,6 +11,7 @@ class MyDocument extends Document {
             <Html lang="en">
                 <Head>
                     <link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet" />
+                    <link rel='icon' href='/assets/favicon.png' type='image/x-icon'/ >
                 </Head>
                 <body>
                     <Main />
