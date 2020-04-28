@@ -7,7 +7,7 @@ export default class Dropdown extends Component {
         this.state = {
             categories: []
         }
-        
+
 
         const url = `https://api.covidfyi.in/v1/state/${this.props.state}`;
 
@@ -21,12 +21,12 @@ export default class Dropdown extends Component {
     componentDidMount() {
         let dropdown = document.querySelector('.dropdown-menu');
         dropdown.addEventListener('click', () => {
-            document.querySelector('.dropdown-navigation').classList.add('show-dropdown');
+            document.querySelector('.dropdown-navigation').classList.toggle('show-dropdown');
         })
 
-        dropdown.addEventListener('blur', () => {
-            document.querySelector('.dropdown-navigation').classList.remove('show-dropdown');
-        })
+        // dropdown.addEventListener('blur', () => {
+        //     document.querySelector('.dropdown-navigation').classList.remove('show-dropdown');
+        // })
     }
     render() {
         const iconMapping = {
@@ -42,7 +42,7 @@ export default class Dropdown extends Component {
         return (
             <>
                 <div className="selected-category">
-                    <img src={`/assets/${iconMapping[this.props.category]}`}/>
+                    <img src={`/assets/${iconMapping[this.props.category]}`} />
                     {this.props.category}
                 </div>
                 <div tabIndex="0" className="dropdown-menu">
