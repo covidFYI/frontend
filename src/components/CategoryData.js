@@ -38,6 +38,7 @@ const CategoryData = (props) => {
                                     {dataUnit.name != undefined ? dataUnit.name : dataUnit.category}
                                 </div>
                                 <div className="location">Location: {dataUnit.area}</div>
+                                <div className="data-source">Source: {dataUnit.source}</div>
                                 {dataUnit.phone1 ? <div className="phone">{dataUnit.phone1}</div> : null}
                                 {dataUnit.email1 ? <div className="email">{dataUnit.email1}</div> : null }
                             </div>

@@ -628,6 +628,12 @@ div.dropdown-navigation a.nav-item:hover {
 	font-size: 0.8rem;
 }
 
+.data-card .data-source {
+	color: var(--gray);
+    font-size: 0.8rem;
+    margin-top: -8px;
+}
+
 .cta {
 	display: flex;
 	justify-content: space-between;
