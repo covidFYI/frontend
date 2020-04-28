@@ -51,7 +51,7 @@ export default class HomeContainer extends Component {
 			<div className="home-container">
 				<div className={`hide-on-focus-${this.state.inputFocus} banner`}>
 					<div className="banner-image">
-                        <img src="/assets/peoplecovid1.svg" width=""/>
+                        <img src="/assets/illustration.png" width=""/>
                     </div>
                     <div className="banner-text">
                         <span>Find consolidated information for help related to Covid-19.</span>
@@ -63,7 +63,7 @@ export default class HomeContainer extends Component {
                     {this.state.showInfoTypes ? <Categories state={this.state.stateSelected} /> : null}
 				</div>
                 <div className="infograph">
-                    <img src="/assets/b.svg" />
+                    <img src="/assets/wordCloud(1).svg" />
                 </div>
 			</div>
 		);

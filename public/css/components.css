@@ -689,7 +689,7 @@ a.social-media-link {
 }
 
 .banner-image {
-    width: 35%
+    width: 45%
 }
 
 .banner-image > img, .infograph{
@@ -697,12 +697,13 @@ a.social-media-link {
 }
 
 .show-991 .infograph {
-    margin-top: 2rem;
+    margin-top: 5rem;
     padding-bottom: 15em;
+    width: 100%;
 }
 
 .infograph > img  {
-    width: 70%
+    width: 80%;
 }
 
 .banner-text {
@@ -718,7 +719,9 @@ a.social-media-link {
 
 .search-heading {
     color: #5D636F;
-    font-size: 28px;
+    font-size: 1rem;
+    margin-left: 10px;
+    margin-bottom: 15px;
 }
 
 .banner-text .tag {
@@ -735,7 +738,7 @@ a.social-media-link {
 .show-991 .search.expand {
     position: absolute;
     width: calc(100% - 10px);
-    top: 70px;
+    top: 60px;
     left: 0;
     padding: 10px;
     min-height: 200px;

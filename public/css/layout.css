@@ -160,7 +160,8 @@
 }
 
 .hide-991 .infograph {
-    margin-top: 5rem;
+    margin-top: 3rem;
+    margin-left: 3rem;
     max-width: 500px;
 }
 
@@ -170,7 +171,7 @@
     padding: 10px;
     position: absolute;
     right: 1rem;
-    top: 3rem;
+    top: 1rem;
     width: 50%;
 }
 .feature-content {
