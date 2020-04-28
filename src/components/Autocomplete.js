@@ -110,6 +110,7 @@ export class Autocomplete extends Component {
   componentDidMount() {
     window.localStorage.getItem('stateHistory') ? this.setState({ userInput: window.localStorage.getItem('stateHistory') }) : null;
     this.props.getSelectedState(window.localStorage.getItem('stateHistory'))
+    this.gpsLocHandler()
   }
 
   render() {
