@@ -14,7 +14,7 @@
 
 > CovidFYI Frontend Repo
 
-### ✨ [Website](covidfyi.in)
+### ✨ [Website](https://covidfyi.in)
 
 ## Install
 
