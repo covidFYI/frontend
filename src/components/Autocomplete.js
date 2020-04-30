@@ -58,6 +58,19 @@ export class Autocomplete extends Component {
     localStorage.setItem('stateHistory', e.currentTarget.innerText)
     this.props.getSelectedState(e.currentTarget.innerText)
   }
+
+  onMouseDown = (e) => {
+    this.setState({
+      activeOption: 0,
+      filteredOptions: [],
+      showOptions: false,
+      userInput: e.currentTarget.innerText,
+    })
+
+    localStorage.setItem('stateHistory', e.currentTarget.innerText)
+    this.props.getSelectedState(e.currentTarget.innerText)
+  }
+
   onKeyDown = (e) => {
     const { activeOption, filteredOptions } = this.state
 
@@ -123,7 +136,7 @@ export class Autocomplete extends Component {
       onKeyDown,
       onFocus,
       onBlur,
-
+      onMouseDown,
       state: { activeOption, filteredOptions, showOptions, userInput },
     } = this
     let optionList
@@ -137,7 +150,7 @@ export class Autocomplete extends Component {
                 className = 'option-active'
               }
               return (
-                <li tabIndex={index} className={className} key={optionName} onClick={onClick}>
+                <li tabIndex={index} className={className} key={optionName} onMouseDown={onMouseDown}>
                   {optionName}
                 </li>
               )
