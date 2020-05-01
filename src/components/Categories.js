@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Link from 'next/link'
+import getDataFor from '../utils/getDataFor';
 
 export default class Categories extends Component {
     state = {
@@ -7,21 +8,19 @@ export default class Categories extends Component {
         count: 0
     }
 
-    // componentDidMount() {
-    //     this.componentDidUpdate()
-    // }
+    async componentDidMount() {
+            // const url = `https://api.covidfyi.in/v1/state/${this.props.state}`;
 
-    componentDidMount() {
-        // if (this.state.count < 10) {
-            const url = `https://api.covidfyi.in/v1/state/${this.props.state}`;
-
-            fetch(url)
-                .then(res => res.json())
-                .then(data => this.setState({
-                    categories: [... new Set(data.results.map(data => data.category))],
-                    count: this.state.count + 1
-                }))
-        // }
+            // fetch(url)
+            //     .then(res => res.json())
+            //     .then(data => this.setState({
+            //         categories: [... new Set(data.results.map(data => data.category))],
+            //         count: this.state.count + 1
+            //     }))
+            let data = await getDataFor({ state: this.props.state })
+            this.setState({
+                categories: [... new Set(data.results.map(data => data.category))]
+            })
     }
 
     render() {

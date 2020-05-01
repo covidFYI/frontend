@@ -97,6 +97,7 @@ export class Autocomplete extends Component {
   }
 
   success = (position) => {
+    console.log("GEOLOCATING")
     fetch(`https://api.covidfyi.in/v1/locate?lat=${position.coords.latitude}&lon=${position.coords.longitude}`).then(
       (response) => {
         console.log(
@@ -122,10 +123,11 @@ export class Autocomplete extends Component {
   }
 
   componentDidMount() {
-    window.localStorage.getItem('stateHistory')
-      ? this.setState({ userInput: window.localStorage.getItem('stateHistory') })
-      : null
-    this.props.getSelectedState(window.localStorage.getItem('stateHistory'))
+    if(window.localStorage.getItem('stateHistory')) {
+        this.setState({ userInput: window.localStorage.getItem('stateHistory') })
+        this.props.getSelectedState(window.localStorage.getItem('stateHistory'))
+    }
+
     this.gpsLocHandler()
   }
 

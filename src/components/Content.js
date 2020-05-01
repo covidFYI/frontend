@@ -5,8 +5,7 @@ import Categories from "../components/Categories";
 import MobileContent from "./MobileContent";
 import NewsContainer from "./NewsContainer";
 import OverallStats from "./OverallStats";
-import HospitalsStats from "./HospitalsStats";
-import LaboratoryStats from "./LaboratoryStats";
+import getDataFor from '../utils/getDataFor';
 
 export default class Content extends Component {
 	state = {
@@ -23,16 +22,15 @@ export default class Content extends Component {
 	};
 
 	getInfoTypes = async () => {
-		// NOTE: Till new backend is not deployed, we can use flask backend from organisation repo on our localhost.
-		const res = await fetch(
-			`https://api.covidfyi.in/v1/state/${this.state.stateSelected}`
-		);
-		const stateData = await res.json();
+		// const res = await fetch(
+		// 	`https://api.covidfyi.in/v1/state/${this.state.stateSelected}`
+		// );
+        // const stateData = await res.json();
+        const stateData = await getDataFor({ 'state': this.state.stateSelected})
 		const infotypes = [
 			...new Set(stateData.results.map((data) => data.category)),
 		];
 		this.setState({ availableInfoTypes: infotypes, showInfoTypes: true });
-		console.log(infotypes); // For Debugging
 	};
 
 	render() {
