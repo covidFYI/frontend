@@ -800,6 +800,11 @@ a.social-media-link {
   left: 0;
   padding: 10px;
   min-height: 200px;
+  padding-bottom: 20rem;
+}
+
+.show-991 .search.expand ~ div > .information{
+  display: none;
 }
 
 @media only screen and (max-width: 1230px) {
