@@ -7,6 +7,7 @@ import {
   CartesianGrid,
   Tooltip,
 } from "recharts";
+import getDataFor from "../utils/getDataFor";
 
 export default class CovidHistoryChart extends PureComponent {
   width = this.props.width ? this.props.width : 500;
@@ -15,20 +16,32 @@ export default class CovidHistoryChart extends PureComponent {
     data: null,
   };
 
-  componentDidMount() {
-    fetch("https://api.covidfyi.in/v1/covid_stats/history")
-      .then((res) => res.json())
-      .then((data) => {
-        for (var i = 0; i < data.length; i++) {
-          var obj = data[i];
-          for (var prop in obj) {
-            if (obj.hasOwnProperty(prop) && !isNaN(obj[prop])) {
-              obj[prop] = +obj[prop];
-            }
+  async componentDidMount() {
+      let data = await getDataFor({ stats: 'covid_stats/history'})
+      for (var i = 0; i < data.length; i++) {
+        var obj = data[i];
+        for (var prop in obj) {
+          if (obj.hasOwnProperty(prop) && !isNaN(obj[prop])) {
+            obj[prop] = +obj[prop];
           }
         }
-        this.setState({ data: data });
-      });
+      }
+      
+      this.setState({ data: data });
+
+    // fetch("https://api.covidfyi.in/v1/covid_stats/history")
+    //   .then((res) => res.json())
+    //   .then((data) => {
+    //     for (var i = 0; i < data.length; i++) {
+    //       var obj = data[i];
+    //       for (var prop in obj) {
+    //         if (obj.hasOwnProperty(prop) && !isNaN(obj[prop])) {
+    //           obj[prop] = +obj[prop];
+    //         }
+    //       }
+    //     }
+    //     this.setState({ data: data });
+    //   });
   }
 
   render() {

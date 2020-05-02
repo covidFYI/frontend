@@ -1,16 +1,21 @@
 import React, { Component } from 'react'
+import getDataFor from '../utils/getDataFor'
 
 export default class Statistics extends Component {
     state = {
         categoriesStats: []
     }
-    componentDidMount() {
-        fetch('https://api.covidfyi.in/v1/categories/total')
-            .then(res => res.json())
-            .then(data => {
-                this.setState({ categoriesStats: data.results })
-                console.log(data.results);
-            })
+    async componentDidMount() {
+        let data = await getDataFor({ stats: 'categories/total'})
+        this.setState({
+            categoriesStats: data.results
+        })
+        // fetch('https://api.covidfyi.in/v1/categories/total')
+        //     .then(res => res.json())
+        //     .then(data => {
+        //         this.setState({ categoriesStats: data.results })
+        //         console.log(data.results);
+        //     })
     }
     render() {
         return (

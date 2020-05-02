@@ -1,7 +1,12 @@
 const getDataFor = async (options) => {
-  console.log("Hello");
   const fetchStateData = async (state) => {
     const res = await fetch(`https://api.covidfyi.in/v1/state/${state}`);
+    const response = await res.json();
+    return response;
+  };
+
+  const fetchStatsData = async (key) => {
+    const res = await fetch(`https://api.covidfyi.in/v1/${key}`);
     const response = await res.json();
     return response;
   };
@@ -56,6 +61,21 @@ const getDataFor = async (options) => {
 	  statesData.push({ [state]: data, lastUpdated: now });
 	  localStorage.setItem("states", JSON.stringify(statesData));
       return data;
+    }
+  }
+
+  if(options['stats']) {
+      let key = options['stats'];
+      if(localStorage.getItem(key)) {
+          if(!isExpired(localStorage.getItem('lastUpdated'))) {
+              return JSON.parse(localStorage.getItem(key));
+          }
+      } else {
+        let data = await fetchStatsData(key);
+        const now = new Date();
+        localStorage.setItem(key, JSON.stringify(data));
+        localStorage.setItem('lastUpdated', now)
+        return data;
     }
   }
 };

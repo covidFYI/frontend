@@ -10,16 +10,19 @@ import Link from 'next/link'
 
 
 
-const State = () => {
+const State = ({ state, category }) => {
 
     const router = useRouter();
 
-    const { state, category } = router.query;
+    // const { state, category } = router.query;
     
     // const myRef = useRef(null)
     // useEffect(() => {
     //     window.scrollTo(0, myRef.current.offsetTop)
     // })
+
+    console.log(state, category)
+
 
     
     return (
@@ -52,6 +55,11 @@ const State = () => {
             <Footer />
         </div>
     )
+}
+
+State.getInitialProps = async ({ query }) => {
+    const {state, category} = query;
+    return {state, category}
 }
 
 export default State;

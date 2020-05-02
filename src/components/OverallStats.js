@@ -3,31 +3,50 @@ import {
     PieChart, Pie, Legend, Tooltip, Cell, ResponsiveContainer
 } from 'recharts';
 import Link from 'next/link';
+import getDataFor from '../utils/getDataFor'
 
 export default class OverallStats extends PureComponent {
     state = {
         stats: []
     }
 
-    componentDidMount() {
-        fetch('https://api.covidfyi.in/v1/covid_stats')
-            .then(res => res.json())
-            .then(data => {
-                let stats = [];
+    async componentDidMount() {
 
-                stats.push(data.map(d => {
-                    return (
-                        {
-                            name: Object.keys(d)[0],
-                            value: parseInt(Object.values(d)[0])
-                        }
-                    )
-                }))
+        let data = await getDataFor({ stats: 'covid_stats'})
+        
+        let stats = [];
+        stats.push(data.map(d => {
+            return (
+                {
+                    name: Object.keys(d)[0],
+                    value: parseInt(Object.values(d)[0])
+                }
+            )
+        }))
+        this.setState({
+            stats: stats.flat()
+        })
 
-                this.setState({stats: stats.flat()})
-                data = stats
+        data = stats
 
-            })
+        // fetch('https://api.covidfyi.in/v1/covid_stats')
+        //     .then(res => res.json())
+        //     .then(data => {
+        //         let stats = [];
+
+        //         stats.push(data.map(d => {
+        //             return (
+        //                 {
+        //                     name: Object.keys(d)[0],
+        //                     value: parseInt(Object.values(d)[0])
+        //                 }
+        //             )
+        //         }))
+
+        //         this.setState({stats: stats.flat()})
+        //         data = stats
+
+        //     })
     }
 
     render() {

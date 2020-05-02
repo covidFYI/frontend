@@ -2,20 +2,26 @@ import React, { Component, PureComponent } from 'react'
 import {
     BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer
 } from 'recharts';
+import getDataFor from '../utils/getDataFor'
 
 
 export default class HospitalsStats extends PureComponent {
     state = {
         stats: []
     }
-    componentDidMount() {
-        fetch('https://api.covidfyi.in/v1/categories/Hospitals/total')
-            .then(res => res.json())
-            .then(data => {
-                this.setState({
-                    stats: data.results
-                })
-            })
+    async componentDidMount() {
+        // fetch('https://api.covidfyi.in/v1/categories/Hospitals/total')
+        //     .then(res => res.json())
+        //     .then(data => {
+        //         this.setState({
+        //             stats: data.results
+        //         })
+        //     })
+
+        let data = await getDataFor({ stats: 'categories/Hospitals/total'})
+        this.setState({
+            stats: data.results
+        })
 
     }
 

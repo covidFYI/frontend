@@ -1,33 +1,36 @@
 import React, { Component } from 'react'
 import Link from 'next/link'
 import fetch from 'isomorphic-unfetch'
+import getDataFor from '../utils/getDataFor'
 
 export default class Dropdown extends Component {
-    componentWillMount() {
+    async componentWillMount() {
         this.state = {
             categories: []
         }
 
+        // const url = `https://api.covidfyi.in/v1/state/${this.props.state}`;
 
-        const url = `https://api.covidfyi.in/v1/state/${this.props.state}`;
-
-        fetch(url)
-            .then(res => res.json())
-            .then(data => this.setState({
-                categories: [... new Set(data.results.map(data => data.category))]
-            }))
+        // fetch(url)
+        //     .then(res => res.json())
+        //     .then(data => this.setState({
+        //         categories: [... new Set(data.results.map(data => data.category))]
+        //     }))
     }
 
-    componentDidMount() {
+    async componentDidMount() {
         let dropdown = document.querySelector('.dropdown-menu');
         dropdown.addEventListener('click', () => {
             document.querySelector('.dropdown-navigation').classList.toggle('show-dropdown');
         })
 
-        // dropdown.addEventListener('blur', () => {
-        //     document.querySelector('.dropdown-navigation').classList.remove('show-dropdown');
-        // })
+        let data = await getDataFor({ state: this.props.state })
+        console.log(data)
+        this.setState({
+            categories: [... new Set(data.results.map(data => data.category))]
+        })
     }
+
     render() {
         const iconMapping = {
             Doctor: "icon-doctor.svg",

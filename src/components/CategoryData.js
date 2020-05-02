@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import getDataFor from '../utils/getDataFor'
 
 const getSource = (dataUnit) => {
   if (dataUnit.source_link_valid) {
@@ -59,24 +60,19 @@ const getAdditionalInfo = (dataUnit) => {
 const CategoryData = (props) => {
   const [state, setState] = useState({
     data: [],
-    count: 0,
   });
+
+  const getCategoryData = async () => {
+    let data = await getDataFor({state: props.state})
+    console.log(data)
+    setState({
+        data: data.results.filter(d => d.category === props.category)
+    })
+  }
 
   useEffect(() => {
     console.log("useEffect called");
-    if (state.count < 10) {
-      let url = `https://api.covidfyi.in/v1/state/${props.state}/${props.category}`;
-
-      fetch(url)
-        .then((res) => res.json())
-        .then((data) => {
-          setState({
-            data: data.results,
-            count: state.count + 1,
-          });
-          // cat = data.entries;
-        });
-    }
+    getCategoryData()
   }, [props.category]);
 
   return (
