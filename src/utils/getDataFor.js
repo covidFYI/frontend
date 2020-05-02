@@ -12,7 +12,7 @@ const getDataFor = async (options) => {
   };
 
   const isExpired = (lastUpdated) => {
-	const last = lastUpdated;  
+	const last = new Date(JSON.parse(lastUpdated));  
 	const now = new Date();
 	let diff = (Math.round(((now-last))/1000)/60)/60;
 	let updateDurationHours = 12;
@@ -35,7 +35,7 @@ const getDataFor = async (options) => {
           let data = await fetchStateData(state);
           statesData[i][state] = data;
           const now = new Date();
-          statesData[i]["lastUpdated"] = now;
+          statesData[i]["lastUpdated"] = JSON.stringify(now);
           localStorage.setItem("states", JSON.stringify(statesData));
           return statesData[i][state];
         }
@@ -44,13 +44,13 @@ const getDataFor = async (options) => {
       let data = await fetchStateData(state);
       if (statesData.length < 3) {
         const now = new Date();
-        statesData.push({ [state]: data, lastUpdated: now });
+        statesData.push({ [state]: data, lastUpdated: JSON.stringify(now) });
         localStorage.setItem("states", JSON.stringify(statesData));
         return data;
       } else {
         statesData.shift();
         const now = new Date();
-		statesData.push({ [state]: data, lastUpdated: now });
+		statesData.push({ [state]: data, lastUpdated: JSON.stringify(now) });
 		localStorage.setItem("states", JSON.stringify(statesData));
         return data;
       }
@@ -58,7 +58,7 @@ const getDataFor = async (options) => {
       let statesData = [];
       let data = await fetchStateData(state);
       const now = new Date();
-	  statesData.push({ [state]: data, lastUpdated: now });
+	  statesData.push({ [state]: data, lastUpdated: JSON.stringify(now) });
 	  localStorage.setItem("states", JSON.stringify(statesData));
       return data;
     }
@@ -70,13 +70,14 @@ const getDataFor = async (options) => {
           if(!isExpired(localStorage.getItem('lastUpdated'))) {
               return JSON.parse(localStorage.getItem(key));
           }
-      } else {
+      } 
+
         let data = await fetchStatsData(key);
         const now = new Date();
         localStorage.setItem(key, JSON.stringify(data));
-        localStorage.setItem('lastUpdated', now)
+        localStorage.setItem('lastUpdated', JSON.stringify(now))
         return data;
-    }
+    
   }
 };
 
