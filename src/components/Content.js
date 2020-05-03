@@ -60,7 +60,7 @@ export default class Content extends Component {
 										<img src="/assets/wordCloud(1).svg" />
 									</div>
 									<div className="search-feature">
-										<SearchContainer getSelectedState={this.getSelectedState} />
+										<SearchContainer getSelectedState={this.getSelectedState} currentState={this.state.stateSelected} />
 										{this.state.showInfoTypes ? (
 											<Categories state={this.state.stateSelected} />
 										) : null}
