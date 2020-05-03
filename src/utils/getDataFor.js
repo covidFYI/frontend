@@ -77,7 +77,16 @@ const getDataFor = async (options) => {
         localStorage.setItem(key, JSON.stringify(data));
         localStorage.setItem('lastUpdated', JSON.stringify(now))
         return data;
-    
+  }
+
+  if(options['geoLocation']) {
+    let key = options['geoLocation'];
+    if(localStorage.getItem(key))
+        return JSON.parse(localStorage.getItem(key));
+
+    let data = await fetchStatsData(key);
+    localStorage.setItem(key, JSON.stringify(data));
+    return data;
   }
 };
 

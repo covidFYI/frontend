@@ -64,14 +64,14 @@ const CategoryData = (props) => {
 
   const getCategoryData = async () => {
     let data = await getDataFor({state: props.state})
-    console.log(data)
+    // console.log(data)
     setState({
         data: data.results.filter(d => d.category === props.category)
     })
   }
 
   useEffect(() => {
-    console.log("useEffect called");
+    // console.log("useEffect called");
     getCategoryData()
   }, [props.category]);
 
