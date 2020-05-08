@@ -30,7 +30,7 @@ function shuffleArray(array) {
     return array;
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
 	const res = await fetch("https://api.covidfyi.in/v1/news");
     var json = await res.json();
     json = (shuffleArray(json.results)).slice(0, 7);
