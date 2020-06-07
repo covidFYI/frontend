@@ -1,17 +1,17 @@
 import { useRouter } from 'next/router';
 import { useEffect, useRef } from 'react';
-import Footer from '../../components/Footer'
-import NavigationBar from '../../components/NavigationBar'
-import SearchBar from "../../components/SearchBar";
-import Categories from '../../components/Categories';
-import CategoryData from '../../components/CategoryData';
-import Dropdown from '../../components/Dropdown';
-import AreaDropdown from '../../components/AreaDropdown';
+import Footer from '../../../components/Footer'
+import NavigationBar from '../../../components/NavigationBar'
+import SearchBar from "../../../components/SearchBar";
+import Categories from '../../../components/Categories';
+import CategoryData from '../../../components/CategoryData';
+import Dropdown from '../../../components/Dropdown';
+import AreaDropdown from '../../../components/AreaDropdown';
 import Link from 'next/link'
 
 
 
-const State = ({ state, category }) => {
+const StateData = ({ state, category, area }) => {
 
     const router = useRouter();
 
@@ -49,8 +49,10 @@ const State = ({ state, category }) => {
                         <Link href="/[state]" as={`/${state}`}><a>{state}</a></Link>
                         <img src="/assets/breadcrum-arrow.svg" />
                         <Link href="/[state]/[category]" as={`/${state}/${category}`}><a>{category}</a></Link>
+                        <img src="/assets/breadcrum-arrow.svg" />
+                        <Link href="/[state]/[category]/[area]" as={`/${state}/${category}/${area}`}><a>{area}</a></Link>
                     </div>
-                    <CategoryData state={state} category={category} />
+                    <CategoryData state={state} category={category} area={area}/>
                 </div>
             </div>
             <Footer />
@@ -58,9 +60,9 @@ const State = ({ state, category }) => {
     )
 }
 
-State.getInitialProps = async ({ query }) => {
-    const { state, category } = query;
-    return { state, category }
+StateData.getInitialProps = async ({ query }) => {
+    const { state, category, area } = query;
+    return { state, category, area }
 }
 
-export default State;
+export default StateData;

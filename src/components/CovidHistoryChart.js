@@ -26,7 +26,7 @@ export default class CovidHistoryChart extends PureComponent {
           }
         }
       }
-      
+
       this.setState({ data: data });
 
     // fetch("https://api.covidfyi.in/v1/covid_stats/history")
@@ -71,7 +71,7 @@ export default class CovidHistoryChart extends PureComponent {
           />
           <Area
             type="monotone"
-            dataKey="Confirmed"
+            dataKey="Active"
             stackId="1"
             stroke="#7F7BC9"
             fill="#7F7BC9"

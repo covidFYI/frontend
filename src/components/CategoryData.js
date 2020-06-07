@@ -63,26 +63,31 @@ const CategoryData = (props) => {
   });
 
   const getCategoryData = async () => {
-    let data = await getDataFor({state: props.state})
-    // console.log(data)
-    setState({
+    let data = await getDataFor({ state: props.state })
+    if (props.area) {
+      setState({
+        data: data.results.filter(d => d.category === props.category && d.area === props.area)
+      })
+    }
+    else {
+      setState({
         data: data.results.filter(d => d.category === props.category)
-    })
+      })
+    }
   }
 
   useEffect(() => {
-    // console.log("useEffect called");
     getCategoryData()
-  }, [props.category]);
+  }, [props.category, props.area]);
 
   return (
     <div className="data-grid">
-      {Array.from(state.data).map((dataUnit) => {
+      {Array.from(state.data).map((dataUnit, index) => {
         return (
-          <div key={dataUnit.id} className="data-card">
+          <div key={index} className="data-card">
             <div className="info">
               <div className="name">
-                {dataUnit.name != undefined ? dataUnit.name : dataUnit.category}
+                {dataUnit.name != undefined ? dataUnit.name : dataUnit.pointofcontact != undefined ? dataUnit.pointofcontact : dataUnit.category}
                 {getAdditionalInfo(dataUnit)}
               </div>
               <div className="location">
@@ -99,7 +104,7 @@ const CategoryData = (props) => {
                 </svg>
                 <span> {dataUnit.area} </span>
               </div>
-              
+
               {dataUnit.phone1 ? (
                 <div className="phone">{dataUnit.phone1}</div>
               ) : null}

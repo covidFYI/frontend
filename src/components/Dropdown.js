@@ -5,17 +5,9 @@ import getDataFor from '../utils/getDataFor'
 
 export default class Dropdown extends Component {
     async componentWillMount() {
-        this.state = {
+        this.setState({
             categories: []
-        }
-
-        // const url = `https://api.covidfyi.in/v1/state/${this.props.state}`;
-
-        // fetch(url)
-        //     .then(res => res.json())
-        //     .then(data => this.setState({
-        //         categories: [... new Set(data.results.map(data => data.category))]
-        //     }))
+        })
     }
 
     async componentDidMount() {
@@ -25,7 +17,6 @@ export default class Dropdown extends Component {
         })
 
         let data = await getDataFor({ state: this.props.state })
-        console.log(data)
         this.setState({
             categories: [... new Set(data.results.map(data => data.category))]
         })
@@ -33,13 +24,13 @@ export default class Dropdown extends Component {
 
     render() {
         const iconMapping = {
-            Doctor: "icon-doctor.svg",
-            Government: "icon-govt-officers.svg",
-            Helplines: "icon-call.svg",
-            Hospitals: "icon-hospital.svg",
-            Laboratories: "icon-labs.svg",
+            "Doctors": "icon-doctor.svg",
+            "Government Contacts": "icon-govt-officers.svg",
+            "Helplines": "icon-call.svg",
+            "Hospitals": "icon-hospital.svg",
+            "Laboratories": "icon-labs.svg",
             "Fever Clinics": "icon-fever.svg",
-            "Quarantine Facility": "icon-quarantine.svg",
+            "Quarantine Facilities": "icon-quarantine.svg",
         };
 
         return (

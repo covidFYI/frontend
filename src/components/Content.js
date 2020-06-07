@@ -6,6 +6,7 @@ import MobileContent from "./MobileContent";
 import NewsContainer from "./NewsContainer";
 import OverallStats from "./OverallStats";
 import getDataFor from '../utils/getDataFor';
+import Button from '@material-ui/core/Button';
 
 export default class Content extends Component {
 	state = {
@@ -25,8 +26,8 @@ export default class Content extends Component {
 		// const res = await fetch(
 		// 	`https://api.covidfyi.in/v1/state/${this.state.stateSelected}`
 		// );
-        // const stateData = await res.json();
-        const stateData = await getDataFor({ 'state': this.state.stateSelected})
+		// const stateData = await res.json();
+		const stateData = await getDataFor({ 'state': this.state.stateSelected })
 		const infotypes = [
 			...new Set(stateData.results.map((data) => data.category)),
 		];
@@ -61,16 +62,19 @@ export default class Content extends Component {
 									</div>
 									<div className="search-feature">
 										<SearchContainer getSelectedState={this.getSelectedState} currentState={this.state.stateSelected} />
-										{this.state.showInfoTypes ? (
+										<Button variant="contained" href={`/${this.state.stateSelected}`}>
+											Search
+      									</Button>
+										{/* {this.state.showInfoTypes ? (
 											<Categories state={this.state.stateSelected} />
-										) : null}
+										) : null} */}
 
 									</div>
 								</div>
 							</div>
-							<div className="">
+							{/* <div className="">
 								<InformationComponent />
-							</div>
+							</div> */}
 						</div>
 						<div className="news-stats card">
 							<h5>Latest news</h5>

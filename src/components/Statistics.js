@@ -6,7 +6,7 @@ export default class Statistics extends Component {
         categoriesStats: []
     }
     async componentDidMount() {
-        let data = await getDataFor({ stats: 'categories/total'})
+        let data = await getDataFor({ stats: 'categories/total' })
         this.setState({
             categoriesStats: data.results
         })
@@ -23,9 +23,9 @@ export default class Statistics extends Component {
                 <h5>Our site provides:</h5>
                 <div className="statistics-info">
                     {
-                        this.state.categoriesStats.map(item => {
+                        this.state.categoriesStats.map((item, index) => {
                             return (
-                                <div className="stat info">
+                                <div className="stat info" key={index}>
                                     <div className="stat--number">{item.total}</div>
                                     <div className="stat--label">Number of  {item.category}</div>
                                 </div>
