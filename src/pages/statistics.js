@@ -25,7 +25,7 @@ const Stats = () => {
         </div>
 
         {/* <LaboratoryStats/> */}
-        <HospitalsStats height={1200} />
+        
       </div>
       <Footer />
     </div>
