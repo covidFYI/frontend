@@ -1,4 +1,4 @@
-/* 
+/*
     Components
     ----------------------------------------------------------------------------
     In this Components for the document will be defined
@@ -18,7 +18,7 @@ body {
   display: flex;
   flex-direction: column;
   width: 100%;
-  position: fixed;
+  position: relative;
   /* margin-top: auto; */
   font-size: 1rem;
   height: auto;
@@ -94,6 +94,17 @@ div.dropdown-navigation a.nav-item:hover {
   cursor: pointer;
 }
 
+div.area-dropdown-navigation a.nav-item {
+  padding: 15px 35px;
+  transition: 0.3s ease-in-out;
+}
+
+div.area-dropdown-navigation a.nav-item:hover {
+  background-color: var(--accent);
+  color: white;
+  cursor: pointer;
+}
+
 .nav-item.active {
   color: var(--accent);
   position: relative;
@@ -133,6 +144,23 @@ div.dropdown-navigation a.nav-item:hover {
 }
 
 .dropdown-navigation.show-dropdown {
+  display: flex;
+}
+
+.area-dropdown-navigation {
+  position: absolute;
+  padding: 15px 0px;
+  background: #fff;
+  right: -10px;
+  top: 100%;
+  width: 200px;
+  border-radius: 5px;
+  box-shadow: var(--box-shadow);
+  flex-direction: column;
+  display: none;
+}
+
+.area-dropdown-navigation.show-area-dropdown {
   display: flex;
 }
 
@@ -356,7 +384,7 @@ div.dropdown-navigation a.nav-item:hover {
 }
 
 /* .option-active {
-	color: var(--light-gray) !important;  
+	color: var(--light-gray) !important;
 	background-color: var(--accent);
 }
 
@@ -614,11 +642,12 @@ div.dropdown-navigation a.nav-item:hover {
 
 .data-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: auto auto auto auto;
   grid-auto-rows: auto;
   grid-gap: 20px;
   padding: 0 10px;
-  padding-bottom: 15rem;
+  padding-bottom: 2rem;
+  margin-top: 50px;
 }
 
 .data-card {
@@ -877,7 +906,7 @@ a.social-media-link {
   }
 
   .footer {
-    position: absolute;
+    position: relative;
   }
   .tabs-content {
     padding-bottom: 12rem;

@@ -91,7 +91,6 @@ export class Autocomplete extends Component {
       this.setState({ activeOption: activeOption - 1 });
     } else if (e.keyCode === 40) {
       if (activeOption === filteredOptions.length - 1) {
-        // console.log(activeOption);
         return;
       }
       this.setState({ activeOption: activeOption + 1 });
@@ -102,7 +101,6 @@ export class Autocomplete extends Component {
     let resp = await getDataFor({
       geoLocation: `locate?lat=${position.coords.latitude}&lon=${position.coords.longitude}`,
     });
-    // console.log(resp.geoplugin_region);
     let state = resp.geoplugin_region;
     for (let key in geoPluginMapping) {
       if (state === key) {

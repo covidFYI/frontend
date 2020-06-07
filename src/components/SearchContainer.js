@@ -7,7 +7,7 @@ const SearchContainer = (props) => (
       {/* <SearchBar getSelectedState={props.getSelectedState} focusHandler={props.focusHandler} /> */}
       <SearchBar getSelectedState={props.getSelectedState} />
       {props.currentState ? (
-        <div class="location-text">
+        <div className="location-text">
           Your Current location: {props.currentState}
         </div>
       ) : null}

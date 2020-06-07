@@ -1,4 +1,4 @@
-/* 
+/*
     Layout
     ----------------------------------------------------------------------------
     All the style related to layout like flex/grid will go here
@@ -134,7 +134,7 @@
     display: flex;
     margin: 20px 0;
     background: rgb(82, 104, 231, 0.1);
-    
+
     border-radius: 5px;
     overflow: hidden;
 }
@@ -192,7 +192,7 @@
     display: grid;
     grid-template-columns: 65% 35%;
     grid-column-gap: 1rem;
-    padding-bottom: 30rem;
+    padding-bottom: 7rem;
     grid-template-rows: 300px 65vh;
 }
 
@@ -259,6 +259,34 @@
     top: 101%;
     right: 0;
 }
+
+.area-dropdown-menu {
+    display: inline-block;
+    border-radius: 4px;
+    margin-left: 1rem;
+    border: 1px solid var(--gray);
+    position: relative;
+    cursor: pointer;
+}
+/* .dropdown-menu:hover > .dropdown-navigation {
+    display: flex;
+} */
+.area-dropdown-menu .selected-item {
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.area-dropdown-menu .selected-item img{
+    margin-left: 20px;
+    transform: rotate(90deg);
+    width: 10px;
+}
+.area-dropdown-menu .area-dropdown-navigation {
+    width: 100%;
+    top: 101%;
+    right: 0;
+}
+
 .dropdown-item {
     padding: 10px 20px;
 }

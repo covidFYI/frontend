@@ -4,11 +4,15 @@
   "description": "CovidFYI Frontend Repo",
   "main": "index.js",
   "dependencies": {
+    "@material-ui/core": "^4.10.1",
+    "@material-ui/icons": "^4.9.1",
     "isomorphic-unfetch": "^3.0.0",
     "next": "^9.3.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-ga": "^2.7.0",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0",
     "recharts": "^1.8.5"
   },
   "devDependencies": {},
