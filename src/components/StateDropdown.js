@@ -84,7 +84,7 @@ export default function SimpleSelect(props) {
 					onChange={stateChangeHandler}
 					label="State"
 				>
-					{Array.from(stateOptions).map((state, index) => {
+					{Array.from(stateOptions).sort().map((state, index) => {
 						return (
 							<MenuItem
 								value={state}
