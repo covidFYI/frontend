@@ -159,7 +159,7 @@ export class Autocomplete extends Component {
       if (filteredOptions.length) {
         optionList = (
           <ul className="options" tabIndex="0">
-            {filteredOptions.map((optionName, index) => {
+            {filteredOptions.sort().map((optionName, index) => {
               let className;
               if (index === activeOption) {
                 className = "option-active";

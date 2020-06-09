@@ -45,13 +45,13 @@ const getSource = (dataUnit) => {
 
 const getAdditionalInfo = (dataUnit) => {
   const additionalInfoMapping = {
-    Doctor: "description",
-    Government: "subcategory",
-    Helplines: "description",
-    Hospitals: "description",
-    Laboratories: "subcategory",
-    "Fever Clinics": "pointofcontact",
-    "Quarantine Facility": "description",
+    'Doctors': "description",
+    'Government Contacts': "subcategory",
+    'Helplines': "description",
+    'Hospitals': "description",
+    'Laboratories': "subcategory",
+    'Fever Clinics': "pointofcontact",
+    'Quarantine Facilities': "description",
   };
 
   return <div className="additional-info">{dataUnit[additionalInfoMapping[dataUnit.category]]}</div>
@@ -87,7 +87,7 @@ const CategoryData = (props) => {
           <div key={index} className="data-card">
             <div className="info">
               <div className="name">
-                {dataUnit.name != undefined ? dataUnit.name : dataUnit.pointofcontact != undefined ? dataUnit.pointofcontact : dataUnit.category}
+                {dataUnit.name != undefined ? dataUnit.name : dataUnit.pointofcontact != undefined && dataUnit.pointofcontact != '' ? dataUnit.pointofcontact : dataUnit.category}
                 {getAdditionalInfo(dataUnit)}
               </div>
               <div className="location">
