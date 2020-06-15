@@ -95,7 +95,6 @@ export default function FullWidthGrid(props) {
               </Button>
           </Paper>
         </Grid>
-        {/* <Grid item sm={1}></Grid> */}
       </Grid>
     </div>
   );

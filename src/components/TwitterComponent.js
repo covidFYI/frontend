@@ -85,8 +85,8 @@ export default function FullWidthGrid(props) {
         <Grid item xs={12} sm={6}>
           <Paper elevation={0} className={classes.paper}>
             <a className="twitter-timeline" data-theme="dark" data-height="400" data-width="550" href={`https://twitter.com/covidfyi` + `${stateData.Code}` + `?ref_src=twsrc%5Etfw`}>
-              Tweets by covidfyiDL
-                </a>
+              Tweets by COVIDFYI {`${state}`}
+            </a>
             <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
           </Paper>
         </Grid>
