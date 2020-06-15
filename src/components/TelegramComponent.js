@@ -50,12 +50,12 @@ const stateInfoMapping = [
   { "state": "Haryana", "Code": "HR" },
   { "state": "Meghalaya", "Code": "ML" },
   { "state": "Arunachal Pradesh", "Code": "AR" },
-  { "state": "Andaman and Nicobar", "Code": "" },
+  { "state": "Andaman and Nicobar", "Code": "AN" },
   { "state": "Andhra Pradesh", "Code": "AP" },
   { "state": "Bihar", "Code": "BH" },
   { "state": "Chandigarh", "Code": "CH" },
   { "state": "Chhattisgarh", "Code": "CG" },
-  { "state": "Dadra and Nagar Haveli", "Code": "" },
+  { "state": "Dadra and Nagar Haveli", "Code": "DN" },
   { "state": "Daman and Diu", "Code": "DD" },
   { "state": "Delhi", "Code": "DL" },
   { "state": "Gujarat", "Code": "GJ" },
@@ -95,7 +95,6 @@ export default function FullWidthGrid(props) {
               </Button>
           </Paper>
         </Grid>
-        {/* <Grid item sm={1}></Grid> */}
       </Grid>
     </div>
   );

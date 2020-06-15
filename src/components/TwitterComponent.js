@@ -44,12 +44,12 @@ const stateInfoMapping = [
   { "state": "Haryana", "Code": "HR" },
   { "state": "Meghalaya", "Code": "ML" },
   { "state": "Arunachal Pradesh", "Code": "AR" },
-  { "state": "Andaman and Nicobar", "Code": "" },
+  { "state": "Andaman and Nicobar", "Code": "AN" },
   { "state": "Andhra Pradesh", "Code": "AP" },
   { "state": "Bihar", "Code": "BH" },
   { "state": "Chandigarh", "Code": "CH" },
   { "state": "Chhattisgarh", "Code": "CG" },
-  { "state": "Dadra and Nagar Haveli", "Code": "" },
+  { "state": "Dadra and Nagar Haveli", "Code": "DN" },
   { "state": "Daman and Diu", "Code": "DD" },
   { "state": "Delhi", "Code": "DL" },
   { "state": "Gujarat", "Code": "GJ" },
@@ -85,8 +85,8 @@ export default function FullWidthGrid(props) {
         <Grid item xs={12} sm={6}>
           <Paper elevation={0} className={classes.paper}>
             <a className="twitter-timeline" data-theme="dark" data-height="400" data-width="550" href={`https://twitter.com/covidfyi` + `${stateData.Code}` + `?ref_src=twsrc%5Etfw`}>
-              Tweets by covidfyiDL
-                </a>
+              Tweets by COVIDFYI {`${state}`}
+            </a>
             <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
           </Paper>
         </Grid>
