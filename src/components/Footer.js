@@ -43,9 +43,9 @@ export default class Footer extends Component {
             <a className="social-media-link" href="https://www.facebook.com/covidfyi" target="_blank">
               <img src="/assets/facebook.svg" />
             </a>
-            <a className="social-media-link" href="" target="_blank">
+            {/* <a className="social-media-link" href="" target="_blank">
               <img src="/assets/linkedin.svg" />
-            </a>
+            </a> */}
             <a className="social-media-link" href="https://twitter.com/covid_fyi" target="_blank">
               <img src="/assets/twitter.svg" />
             </a>

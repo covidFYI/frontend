@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import getDataFor from '../utils/getDataFor'
+import Auxiliary from '../hoc/Auxiliary/Auxiliary'
+import AdditionalFilters from "./AdditionalFilters";
 
 const getSource = (dataUnit) => {
   if (dataUnit.source_link_valid) {
@@ -60,11 +62,32 @@ const getAdditionalInfo = (dataUnit) => {
 const CategoryData = (props) => {
   const [state, setState] = useState({
     data: [],
+    subcategory: ''
   });
-
+  const [subcategory, setSubcategory] = useState('')
   const getCategoryData = async () => {
     let data = await getDataFor({ state: props.state })
-    if (props.area) {
+    if (props.subCategorySelected.length) {
+      console.log('subcategory found')
+      if (props.area) {
+        setState({
+          data: data.results.filter(d =>
+            d.category === props.category &&
+            props.subCategorySelected.includes(d.subcategory) &&
+            d.area === props.area
+          )
+        })
+      }
+      else {
+        setState({
+          data: data.results.filter(d =>
+            d.category === props.category &&
+            props.subCategorySelected.includes(d.subcategory)
+          )
+        })
+      }
+    }
+    else if (props.area) {
       setState({
         data: data.results.filter(d => d.category === props.category && d.area === props.area)
       })
@@ -74,69 +97,78 @@ const CategoryData = (props) => {
         data: data.results.filter(d => d.category === props.category)
       })
     }
+
+  }
+
+  const subcategoryChangeHandler = (subCategory) => {
+    setSubcategory(subCategory)
+    props.clickHandler(subCategory)
   }
 
   useEffect(() => {
     getCategoryData()
-  }, [props.category, props.area]);
+  }, [props.category, props.area, props.subCategorySelected]);
 
   return (
-    <div className="data-grid">
-      {Array.from(state.data).map((dataUnit, index) => {
-        return (
-          <div key={index} className="data-card">
-            <div className="info">
-              <div className="name">
-                {dataUnit.name != undefined ? dataUnit.name : dataUnit.pointofcontact != undefined && dataUnit.pointofcontact != '' ? dataUnit.pointofcontact : dataUnit.category}
-                {getAdditionalInfo(dataUnit)}
-              </div>
-              <div className="location">
-                <svg
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  className="category-icon-svg"
-                >
-                  <path
-                    d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
-                    clipRule="evenodd"
-                    fillRule="evenodd"
-                  ></path>
-                </svg>
-                <span> {dataUnit.area} </span>
-              </div>
-
-              {dataUnit.phone1 ? (
-                <div className="phone">{dataUnit.phone1}</div>
-              ) : null}
-              {dataUnit.email1 ? (
-                <div className="email">{dataUnit.email1}</div>
-              ) : null}
-            </div>
-            <div className="cta">
-              <div className="button-group">
-                {dataUnit.phone1 ? (
-                  <a href={`tel:${dataUnit.phone1}`} className="contact-button">
-                    <img src="/assets/phone.svg" />
-                    Call
-                  </a>
-                ) : null}
-
-                {dataUnit.email1 ? (
-                  <a
-                    href={`mailto:${dataUnit.email1}`}
-                    className="contact-button"
+    <Auxiliary>
+      {/* <AdditionalFilters state={props.state} category={props.category} clickHandler={subcategoryChangeHandler} /> */}
+      <div className="data-grid">
+        {Array.from(state.data).map((dataUnit, index) => {
+          return (
+            <div key={index} className="data-card">
+              <div className="info">
+                <div className="name">
+                  {dataUnit.name != undefined ? dataUnit.name : dataUnit.pointofcontact != undefined && dataUnit.pointofcontact != '' ? dataUnit.pointofcontact : dataUnit.category}
+                  {getAdditionalInfo(dataUnit)}
+                </div>
+                <div className="location">
+                  <svg
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                    className="category-icon-svg"
                   >
-                    <img src="/assets/email-icon.svg" />
-                    Email
-                  </a>
+                    <path
+                      d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                      clipRule="evenodd"
+                      fillRule="evenodd"
+                    ></path>
+                  </svg>
+                  <span> {dataUnit.area} </span>
+                </div>
+
+                {dataUnit.phone1 ? (
+                  <div className="phone">{dataUnit.phone1}</div>
+                ) : null}
+                {dataUnit.email1 ? (
+                  <div className="email">{dataUnit.email1}</div>
                 ) : null}
               </div>
-              {getSource(dataUnit)}
+              <div className="cta">
+                <div className="button-group">
+                  {dataUnit.phone1 ? (
+                    <a href={`tel:${dataUnit.phone1}`} className="contact-button">
+                      <img src="/assets/phone.svg" />
+                    Call
+                    </a>
+                  ) : null}
+
+                  {dataUnit.email1 ? (
+                    <a
+                      href={`mailto:${dataUnit.email1}`}
+                      className="contact-button"
+                    >
+                      <img src="/assets/email-icon.svg" />
+                    Email
+                    </a>
+                  ) : null}
+                </div>
+                {getSource(dataUnit)}
+              </div>
             </div>
-          </div>
-        );
-      })}
-    </div>
+          );
+        })}
+      </div>
+    </Auxiliary>
   );
 };
 

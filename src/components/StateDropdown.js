@@ -60,7 +60,6 @@ const stateOptions = [
 	"Telangana",
 	"Tripura",
 	"Uttarakhand",
-	"Tripura "
 ]
 
 export default function SimpleSelect(props) {
