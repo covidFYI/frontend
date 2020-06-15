@@ -40,7 +40,7 @@ body {
 }
 
 .social-handles,
-.social-handles > img {
+.social-handles>img {
   margin-left: 1vw;
 }
 
@@ -75,7 +75,7 @@ ul.nav-items {
   display: none;
 }
 
-ul.nav-items > .nav-item > a {
+ul.nav-items>.nav-item>a {
   padding: 10px 25px;
 }
 
@@ -171,6 +171,7 @@ div.area-dropdown-navigation a.nav-item:hover {
   flex-wrap: wrap;
   padding: 3rem 1rem;
 }
+
 .contact {
   display: flex;
   justify-content: space-between;
@@ -178,6 +179,7 @@ div.area-dropdown-navigation a.nav-item:hover {
   flex-direction: column;
   height: 80px;
 }
+
 .contact-info,
 .contact-details {
   display: flex;
@@ -188,11 +190,12 @@ div.area-dropdown-navigation a.nav-item:hover {
 .contact-label {
   font-size: 0.8em;
 }
-.contact > * {
+
+.contact>* {
   margin-right: 20px;
 }
 
-.stat-content > div {
+.stat-content>div {
   display: flex;
   justify-content: center;
 }
@@ -204,6 +207,7 @@ div.area-dropdown-navigation a.nav-item:hover {
   align-items: center;
   flex-direction: column;
 }
+
 .statistics-info {
   display: grid;
   grid-template-columns: repeat(auto-fit, 120px);
@@ -219,6 +223,7 @@ div.area-dropdown-navigation a.nav-item:hover {
   font-weight: 600;
   font-size: 1.2em;
 }
+
 .stat {
   display: flex;
   flex-direction: column;
@@ -231,7 +236,7 @@ div.area-dropdown-navigation a.nav-item:hover {
 }
 
 .stat.danger,
-.stat.danger > .stat--number {
+.stat.danger>.stat--number {
   margin-right: 0px;
 }
 
@@ -357,7 +362,7 @@ div.area-dropdown-navigation a.nav-item:hover {
   z-index: 7;
 }
 
-.options > li {
+.options>li {
   color: var(--accent);
   cursor: pointer;
   padding: 20px 65px;
@@ -365,7 +370,7 @@ div.area-dropdown-navigation a.nav-item:hover {
   border-bottom: 1px solid var(--search-bg);
 }
 
-.options > li:hover {
+.options>li:hover {
   border-bottom: none;
   background-color: var(--accent);
   color: var(--light-gray);
@@ -474,11 +479,11 @@ div.area-dropdown-navigation a.nav-item:hover {
   max-height: 450px;
 }
 
-.chatroom > * {
+.chatroom>* {
   margin-bottom: 1.5rem;
 }
 
-.chatroom > *:last-child {
+.chatroom>*:last-child {
   margin-bottom: 10px;
 }
 
@@ -494,13 +499,13 @@ div.area-dropdown-navigation a.nav-item:hover {
   margin-top: 10px;
 }
 
-.request > .user-profile-image {
+.request>.user-profile-image {
   order: 2;
   margin-left: 15px;
   width: 20px;
 }
 
-.response > .profile-image {
+.response>.profile-image {
   margin-right: 15px;
 }
 
@@ -575,11 +580,12 @@ div.area-dropdown-navigation a.nav-item:hover {
   align-items: center;
 }
 
-.info-icon > p {
+.info-icon>p {
   color: #5268e7;
   font-size: 0.9rem;
   margin: 10px 0;
 }
+
 .categories-grid {
   display: grid;
   margin: 50px auto;
@@ -603,9 +609,11 @@ div.area-dropdown-navigation a.nav-item:hover {
 .category.link {
   color: var(--accent);
 }
+
 .category.link.active {
   background: #edeffd;
 }
+
 .category-name {
   font-weight: 600;
   font-size: 1rem;
@@ -613,11 +621,12 @@ div.area-dropdown-navigation a.nav-item:hover {
   color: var(--accent);
   text-align: center;
 }
+
 .category-icon {
   width: 40px;
 }
 
-.stats-flex > * {
+.stats-flex>* {
   margin-bottom: 70px;
 }
 
@@ -664,7 +673,7 @@ div.area-dropdown-navigation a.nav-item:hover {
   background: rgb(82, 104, 231, 0.1);
 }
 
-.data-card .info > *,
+.data-card .info>*,
 .data-card .cta {
   padding: 10px 20px;
 }
@@ -683,10 +692,10 @@ div.area-dropdown-navigation a.nav-item:hover {
 }
 
 .data-card .additional-info {
-    color: var(--gray);
-    font-size: 0.8rem;
-    font-weight: normal;
-    margin-top: 0.8rem;
+  color: var(--gray);
+  font-size: 0.8rem;
+  font-weight: normal;
+  margin-top: 0.8rem;
 }
 
 .data-card .data-source {
@@ -749,12 +758,12 @@ div.area-dropdown-navigation a.nav-item:hover {
   width: 10px;
 }
 
-.breadcrumbs > a {
+.breadcrumbs>a {
   text-decoration: none;
   color: var(--accent);
 }
 
-.breadcrumbs > * {
+.breadcrumbs>* {
   margin-right: 20px;
 }
 
@@ -773,7 +782,7 @@ a.social-media-link {
   width: 45%;
 }
 
-.banner-image > img,
+.banner-image>img,
 .infograph {
   width: 100%;
 }
@@ -783,7 +792,7 @@ a.social-media-link {
   width: 100%;
 }
 
-.infograph > img {
+.infograph>img {
   width: 80%;
 }
 
@@ -815,6 +824,7 @@ a.social-media-link {
   font-size: 1.5em;
   margin-top: 1.618em;
 }
+
 .show-991 .search {
   transition: 0.3s ease-in-out;
   box-sizing: border-box;
@@ -822,6 +832,7 @@ a.social-media-link {
   background: #fff;
   /* transition: 0.3s ease */
 }
+
 .show-991 .search.expand {
   position: absolute;
   width: calc(100% - 10px);
@@ -832,7 +843,7 @@ a.social-media-link {
   padding-bottom: 20rem;
 }
 
-.show-991 .search.expand ~ div > .information{
+.show-991 .search.expand~div>.information {
   display: none;
 }
 
@@ -843,6 +854,7 @@ a.social-media-link {
 }
 
 @media only screen and (orientation: portrait) and (max-width: 500px) and (max-height: 900px) {
+
   /* This media query makes chatbot full screen while in portrait and mobile screen */
   #chatbot {
     height: 100vh;
@@ -852,6 +864,7 @@ a.social-media-link {
     left: 0;
     top: 0;
   }
+
   .chatroom {
     max-height: initial;
   }
@@ -886,16 +899,18 @@ a.social-media-link {
     font-size: 1.2em;
     text-align: center;
   }
+
   .search {
     margin-top: 20px;
   }
+
   .information {
     position: relative;
     display: flex;
     justify-content: center;
   }
 
-  .information > * {
+  .information>* {
     max-width: 600px;
   }
 
@@ -908,13 +923,14 @@ a.social-media-link {
   .footer {
     position: relative;
   }
+
   .tabs-content {
     padding-bottom: 12rem;
   }
 }
 
 @media only screen and (max-width: 870px) {
-  .information > * {
+  .information>* {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -948,10 +964,11 @@ a.social-media-link {
     margin-top: 20px;
   }
 
-  .social-handles > img {
+  .social-handles>img {
     margin-bottom: 6px;
     margin-left: 22px;
   }
+
   nav .logo img {
     width: 35vw;
   }
@@ -994,12 +1011,13 @@ a.social-media-link {
   .options {
     /* top: 60px; */
   }
+
   .options li.option-active {
     background-color: var(--accent);
     color: #fff;
   }
 
-  .options > li {
+  .options>li {
     padding: 10px;
     font-size: 14px;
   }
@@ -1008,11 +1026,11 @@ a.social-media-link {
     grid-template-columns: repeat(3, 110px);
   }
 
-  .info-icon > p {
+  .info-icon>p {
     font-size: 12px;
   }
 
-  .info-icon > img {
+  .info-icon>img {
     width: 40px;
   }
 }

@@ -69,7 +69,7 @@ class AreaDropdown extends Component {
 						<MenuItem value="">
 							<em>None</em>
 						</MenuItem>
-						{Array.from(this.state.areas).map((area, index) => {
+						{Array.from(this.state.areas).sort().map((area, index) => {
 							return (
 								<MenuItem value={area} key={index}>{area}</MenuItem>
 							)

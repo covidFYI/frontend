@@ -19,6 +19,9 @@ import ContactMailIcon from '@material-ui/icons/ContactMail';
 import PersonIcon from '@material-ui/icons/Person';
 import ColorizeSharpIcon from '@material-ui/icons/ColorizeSharp';
 import Categories from '../../components/Categories'
+import AdditionalFilters from "../../components/AdditionalFilters";
+import Telegram from '../../components/TelegramComponent'
+import Twitter from '../../components/TwitterComponent'
 
 function TabPanel(props) {
 	const { children, value, index, ...other } = props;
@@ -74,6 +77,7 @@ const Index = ({ state }) => {
 	let [selectedState, setSelectedState] = useState(0)
 	let [selectedDistrict, setDistrict] = useState(0)
 	let [selectedCategory, setCategory] = useState(0)
+	let [selectedSubCategory, setSubCategory] = useState(0)
 	selectedState = state ? state : selectedState
 	selectedCategory = selectedCategory ? selectedCategory : categories[0]
 
@@ -87,10 +91,16 @@ const Index = ({ state }) => {
 	const districtChangeHandler = (district) => {
 		setDistrict(district);
 	}
+
+	const subcategoryChangeHandler = (subCategory) => {
+		console.log(subCategory)
+		setSubCategory(subCategory);
+	}
+
 	const categoryChangeHandler = (categoryIndex) => {
-		console.log('category', categoryIndex)
 		setCategory(categories[categoryIndex])
 		setDistrict('')
+		setSubCategory([])
 	}
 
 	return (
@@ -120,27 +130,30 @@ const Index = ({ state }) => {
 							<Tab label="Government Contacts" icon={<ContactMailIcon fontSize="large" />} {...a11yProps(6)} />
 						</Tabs>
 					</AppBar>
+					<AdditionalFilters state={selectedState} category={selectedCategory} area={selectedDistrict} clickHandler={subcategoryChangeHandler} />
 					<TabPanel value={value} index={0}>
-						<CategoryData state={selectedState} category="Helplines" area={selectedDistrict} />
+						<CategoryData state={selectedState} category="Helplines" area={selectedDistrict} subCategorySelected={selectedSubCategory} />
 					</TabPanel>
 					<TabPanel value={value} index={1}>
-						<CategoryData state={selectedState} category="Hospitals" area={selectedDistrict} />
+						<CategoryData state={selectedState} category="Hospitals" area={selectedDistrict} subCategorySelected={selectedSubCategory} />
 					</TabPanel>
 					<TabPanel value={value} index={2}>
-						<CategoryData state={selectedState} category="Laboratories" area={selectedDistrict} />
+						<CategoryData state={selectedState} category="Laboratories" area={selectedDistrict} subCategorySelected={selectedSubCategory} />
 					</TabPanel>
 					<TabPanel value={value} index={3}>
-						<CategoryData state={selectedState} category="Fever Clinics" area={selectedDistrict} />
+						<CategoryData state={selectedState} category="Fever Clinics" area={selectedDistrict} subCategorySelected={selectedSubCategory} />
 					</TabPanel>
 					<TabPanel value={value} index={4}>
-						<CategoryData state={selectedState} category="Quarantine Facilities" area={selectedDistrict} />
+						<CategoryData state={selectedState} category="Quarantine Facilities" area={selectedDistrict} subCategorySelected={selectedSubCategory} />
 					</TabPanel>
 					<TabPanel value={value} index={5}>
-						<CategoryData state={selectedState} category="Doctors" area={selectedDistrict} />
+						<CategoryData state={selectedState} category="Doctors" area={selectedDistrict} subCategorySelected={selectedSubCategory} />
 					</TabPanel>
 					<TabPanel value={value} index={6}>
-						<CategoryData state={selectedState} category="Government Contacts" area={selectedDistrict} />
+						<CategoryData state={selectedState} category="Government Contacts" area={selectedDistrict} subCategorySelected={selectedSubCategory} />
 					</TabPanel>
+					<Twitter state={selectedState} />
+					<Telegram state={selectedState} />
 				</div>
 			</div>
 

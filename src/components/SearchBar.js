@@ -47,7 +47,6 @@ export default class SearchBar extends React.Component {
 					"Telangana",
 					"Tripura",
 					"Uttarakhand",
-					"Tripura ",
                 ]}
 			/>
 		);

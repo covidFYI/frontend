@@ -7,6 +7,8 @@ import NewsContainer from "./NewsContainer";
 import OverallStats from "./OverallStats";
 import getDataFor from '../utils/getDataFor';
 import Button from '@material-ui/core/Button';
+import Telegram from './TelegramComponent';
+import Twitter from './TwitterComponent'
 
 export default class Content extends Component {
 	state = {
@@ -23,10 +25,6 @@ export default class Content extends Component {
 	};
 
 	getInfoTypes = async () => {
-		// const res = await fetch(
-		// 	`https://api.covidfyi.in/v1/state/${this.state.stateSelected}`
-		// );
-		// const stateData = await res.json();
 		const stateData = await getDataFor({ 'state': this.state.stateSelected })
 		const infotypes = [
 			...new Set(stateData.results.map((data) => data.category)),
@@ -82,6 +80,8 @@ export default class Content extends Component {
 						</div>
 					</div>
 				</div>
+				<Twitter state="National" />
+				<Telegram state="National" />
 			</div>
 		);
 	}
