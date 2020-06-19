@@ -99,7 +99,7 @@ const Index = ({ state }) => {
 
 	const categoryChangeHandler = (categoryIndex) => {
 		setCategory(categories[categoryIndex])
-		setDistrict('')
+		// setDistrict('')
 		setSubCategory([])
 	}
 

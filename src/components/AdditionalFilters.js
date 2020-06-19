@@ -118,9 +118,9 @@ class AdditionalFilters extends Component {
 
 	render() {
 		const { classes } = this.props;
-		let addMenuItems = false
-		if (!this.state.subCategories.includes(undefined)) {
-			addMenuItems = true
+		let addMenuItems = true
+		if (this.state.subCategories.includes(undefined) || this.state.subCategories.length < 1) {
+			addMenuItems = false
 		}
 
 		return (

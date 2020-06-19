@@ -109,65 +109,71 @@ const CategoryData = (props) => {
     getCategoryData()
   }, [props.category, props.area, props.subCategorySelected]);
 
+  let displayData = false
+
+  if (state.data.length) {
+    displayData = true
+  }
+
   return (
     <Auxiliary>
-      {/* <AdditionalFilters state={props.state} category={props.category} clickHandler={subcategoryChangeHandler} /> */}
-      <div className="data-grid">
-        {Array.from(state.data).map((dataUnit, index) => {
-          return (
-            <div key={index} className="data-card">
-              <div className="info">
-                <div className="name">
-                  {dataUnit.name != undefined ? dataUnit.name : dataUnit.pointofcontact != undefined && dataUnit.pointofcontact != '' ? dataUnit.pointofcontact : dataUnit.category}
-                  {getAdditionalInfo(dataUnit)}
-                </div>
-                <div className="location">
-                  <svg
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    className="category-icon-svg"
-                  >
-                    <path
-                      d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
-                      clipRule="evenodd"
-                      fillRule="evenodd"
-                    ></path>
-                  </svg>
-                  <span> {dataUnit.area} </span>
-                </div>
-
-                {dataUnit.phone1 ? (
-                  <div className="phone">{dataUnit.phone1}</div>
-                ) : null}
-                {dataUnit.email1 ? (
-                  <div className="email">{dataUnit.email1}</div>
-                ) : null}
-              </div>
-              <div className="cta">
-                <div className="button-group">
-                  {dataUnit.phone1 ? (
-                    <a href={`tel:${dataUnit.phone1}`} className="contact-button">
-                      <img src="/assets/phone.svg" />
-                    Call
-                    </a>
-                  ) : null}
-
-                  {dataUnit.email1 ? (
-                    <a
-                      href={`mailto:${dataUnit.email1}`}
-                      className="contact-button"
+      {displayData ?
+        <div className="data-grid">
+          {Array.from(state.data).map((dataUnit, index) => {
+            return (
+              <div key={index} className="data-card">
+                <div className="info">
+                  <div className="name">
+                    {dataUnit.name != undefined ? dataUnit.name : dataUnit.pointofcontact != undefined && dataUnit.pointofcontact != '' ? dataUnit.pointofcontact : dataUnit.category}
+                    {getAdditionalInfo(dataUnit)}
+                  </div>
+                  <div className="location">
+                    <svg
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                      className="category-icon-svg"
                     >
-                      <img src="/assets/email-icon.svg" />
-                    Email
-                    </a>
+                      <path
+                        d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                        clipRule="evenodd"
+                        fillRule="evenodd"
+                      ></path>
+                    </svg>
+                    <span> {dataUnit.area} </span>
+                  </div>
+
+                  {dataUnit.phone1 ? (
+                    <div className="phone">{dataUnit.phone1}</div>
+                  ) : null}
+                  {dataUnit.email1 ? (
+                    <div className="email">{dataUnit.email1}</div>
                   ) : null}
                 </div>
-                {getSource(dataUnit)}
+                <div className="cta">
+                  <div className="button-group">
+                    {dataUnit.phone1 ? (
+                      <a href={`tel:${dataUnit.phone1}`} className="contact-button">
+                        <img src="/assets/phone.svg" />
+                    Call
+                      </a>
+                    ) : null}
+
+                    {dataUnit.email1 ? (
+                      <a
+                        href={`mailto:${dataUnit.email1}`}
+                        className="contact-button"
+                      >
+                        <img src="/assets/email-icon.svg" />
+                    Email
+                      </a>
+                    ) : null}
+                  </div>
+                  {getSource(dataUnit)}
+                </div>
               </div>
-            </div>
-          );
-        })}
-      </div>
+            );
+          })}
+        </div> : <p className="data-grid">No data available at the moment</p>}
     </Auxiliary>
   );
 };
