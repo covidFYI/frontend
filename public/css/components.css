@@ -656,7 +656,7 @@ div.area-dropdown-navigation a.nav-item:hover {
   grid-gap: 20px;
   padding: 0 10px;
   padding-bottom: 2rem;
-  margin-top: 50px;
+  margin-top: 20px;
 }
 
 .data-card {
@@ -681,7 +681,7 @@ div.area-dropdown-navigation a.nav-item:hover {
 .data-card .name {
   font-weight: 600;
   border-bottom: 1px solid var(--light-gray);
-  padding: 20px 20px;
+  padding: 15px 20px;
 }
 
 .data-card .location {

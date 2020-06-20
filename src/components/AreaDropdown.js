@@ -29,7 +29,7 @@ class AreaDropdown extends Component {
 	}
 
 	async componentDidMount() {
-		let categoryData = await getDataFor({ state: this.props.state + '/' + this.props.category })
+		let categoryData = await getDataFor({ state: this.props.state })
 		this.setState({
 			areas: [... new Set(categoryData.results.map(data => data.area))],
 		})
