@@ -29,21 +29,21 @@ class AreaDropdown extends Component {
 	}
 
 	async componentDidMount() {
-		let categoryData = await getDataFor({ state: this.props.state + '/' + this.props.category })
+		let categoryData = await getDataFor({ state: this.props.state })
 		this.setState({
 			areas: [... new Set(categoryData.results.map(data => data.area))],
 		})
 	}
 
-	async componentDidUpdate(prevProps, prevState) {
-		if (prevProps.category !== this.props.category) {
-			let categoryData = await getDataFor({ state: this.props.state + '/' + this.props.category })
-			this.setState({
-				areas: [... new Set(categoryData.results.map(data => data.area))],
-				areaSelected: ''
-			})
-		}
-	}
+	// async componentDidUpdate(prevProps, prevState) {
+	// 	if (prevProps.category !== this.props.category) {
+	// 		let categoryData = await getDataFor({ state: this.props.state + '/' + this.props.category })
+	// 		this.setState({
+	// 			areas: [... new Set(categoryData.results.map(data => data.area))],
+	// 			// areaSelected: ''
+	// 		})
+	// 	}
+	// }
 
 	optionChangeHandler = (event) => {
 		this.setState({
@@ -67,7 +67,7 @@ class AreaDropdown extends Component {
 						label="District"
 					>
 						<MenuItem value="">
-							<em>None</em>
+							All
 						</MenuItem>
 						{Array.from(this.state.areas).sort().map((area, index) => {
 							return (
