@@ -6,11 +6,11 @@ const SearchContainer = (props) => (
     <div className="search-container">
       {/* <SearchBar getSelectedState={props.getSelectedState} focusHandler={props.focusHandler} /> */}
       <SearchBar getSelectedState={props.getSelectedState} />
-      {props.currentState ? (
+      {/* {props.currentState ? (
         <div className="location-text">
           Your Current location: {props.currentState}
         </div>
-      ) : null}
+      ) : null} */}
     </div>
   </>
 );
