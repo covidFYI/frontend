@@ -280,9 +280,7 @@ div.area-dropdown-navigation a.nav-item:hover {
 }
 
 .search-container {
-  position: relative;
-  max-width: 600px;
-  margin: 12px auto;
+  margin-bottom: 10px;
 }
 
 .search-bar {
@@ -776,6 +774,9 @@ a.social-media-link {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-top: 20px;
+  background-color: skyblue;
+  padding-right: 10px;
 }
 
 .banner-image {
@@ -814,15 +815,16 @@ a.social-media-link {
 }
 
 .search-heading {
-  color: #5d636f;
+  color: black;
   font-size: 1rem;
-  margin-left: 10px;
-  margin-bottom: 15px;
+  margin-top: 20px;
 }
 
 .banner-text .tag {
   font-size: 1.5em;
-  margin-top: 1.618em;
+  margin-top: 1.6em;
+  color: white;
+  padding-bottom: 5px;
 }
 
 .show-991 .search {
@@ -893,11 +895,6 @@ a.social-media-link {
 
   .container {
     padding: 0;
-  }
-
-  .search-heading {
-    font-size: 1.2em;
-    text-align: center;
   }
 
   .search {
@@ -993,10 +990,6 @@ a.social-media-link {
 
   .search-bar {
     height: 56px;
-  }
-
-  .search-container {
-    min-width: calc(320px - 2em);
   }
 
   .search-input {

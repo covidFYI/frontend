@@ -81,12 +81,13 @@ export default function FullWidthGrid(props) {
   return (
     <div className={classes.root}>
       <Grid container spacing={2}>
-        <Grid item xs={12} sm={6}>
+      <Grid item sm={1}></Grid>
+        <Grid item xs={12} sm={5}>
           <Paper elevation={0} className={classes.paper}>
             <iframe className={classes.widget} id="preview" src={`https://xn--r1a.website/s/covidfyi` + `${stateCode}`}></iframe>
           </Paper>
         </Grid>
-        <Grid item xs={12} sm={6}>
+        <Grid item xs={12} sm={5}>
           <Paper elevation={0} className={classes.paper}>
             <span className={classes.text}> Direct to your inbox.<br></br>Stay up to date with our Channel.</span><br></br>
             <Button className={classes.button} href={`https://t.me/covidfyi` + `${stateCode}`} variant="contained" color="primary" size="large">
@@ -95,6 +96,8 @@ export default function FullWidthGrid(props) {
               </Button>
           </Paper>
         </Grid>
+        <Grid item sm={1}></Grid>
+
       </Grid>
     </div>
   );

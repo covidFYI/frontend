@@ -73,7 +73,8 @@ export default function FullWidthGrid(props) {
   return (
     <div className={classes.root}>
       <Grid container spacing={2}>
-        <Grid item xs={12} sm={6}>
+        <Grid item sm={1}></Grid>
+        <Grid item xs={12} sm={5}>
           <Paper elevation={0} className={classes.paper}>
             <span className={classes.text}>
               Join COVIDFYI {`${state}`} in conversation<br></br>Follow us on Twitter.<br></br>
@@ -82,7 +83,7 @@ export default function FullWidthGrid(props) {
           </Paper>
         </Grid>
 
-        <Grid item xs={12} sm={6}>
+        <Grid item xs={12} sm={5}>
           <Paper elevation={0} className={classes.paper}>
             <a className="twitter-timeline" data-theme="dark" data-height="400" data-width="550" href={`https://twitter.com/covidfyi` + `${stateData.Code}` + `?ref_src=twsrc%5Etfw`}>
               Tweets by COVIDFYI {`${state}`}
@@ -90,6 +91,7 @@ export default function FullWidthGrid(props) {
             <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
           </Paper>
         </Grid>
+        <Grid item sm={1}></Grid>
       </Grid>
     </div>
   );

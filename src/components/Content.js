@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import InformationComponent from "../components/InformationComponent";
+import TelegramComponent from "../components/TelegramComponent";
+import TwitterComponent from "../components/TwitterComponent";
 import SearchContainer from "../components/SearchContainer";
 import Categories from "../components/Categories";
 import MobileContent from "./MobileContent";
@@ -7,8 +9,8 @@ import NewsContainer from "./NewsContainer";
 import OverallStats from "./OverallStats";
 import getDataFor from '../utils/getDataFor';
 import Button from '@material-ui/core/Button';
-import Telegram from './TelegramComponent';
-import Twitter from './TwitterComponent'
+import Grid from '@material-ui/core/Grid';
+
 
 export default class Content extends Component {
 	state = {
@@ -35,53 +37,35 @@ export default class Content extends Component {
 	render() {
 		return (
 			<div className="content">
-				<div className="show-991">
-					<MobileContent initialProps={this.props.initialProps} />
-				</div>
-				<div className="hide-991">
-					<div className="desktop-content">
+				<Grid container spacing={2}>
+					<Grid item xs={12} >
 						<div className="banner">
 							<div className="banner-image">
 								<img src="/assets/illustration.png" width="" />
 							</div>
 							<div className="banner-text">
-								<span>Find consolidated information for help related to Covid-19.</span>
+								<span style={{color:"white"}}>Find consolidated information for help related to Covid-19.</span>
 								<span className="tag">#together_we_can </span>
 							</div>
 						</div>
-						<div className="card">
-							<OverallStats height={200} enableLink={true} />
+					</Grid>
+				</Grid>
+				<Grid container spacing={2}>
+					<Grid item sm={3}></Grid>
+					<Grid item xs={11} sm={6} >
+						<div>
+							<SearchContainer getSelectedState={this.getSelectedState} currentState={this.state.stateSelected} />
+							<Button variant="outlined" color="primary" size="large" href={`/${this.state.stateSelected}`}>
+								Search
+      						</Button>
 						</div>
-						<div className="feature-wrapper">
-							<div className="features">
-								<div className="feature-content">
-									<div className="infograph">
-										<img src="/assets/wordCloud(1).svg" />
-									</div>
-									<div className="search-feature">
-										<SearchContainer getSelectedState={this.getSelectedState} currentState={this.state.stateSelected} />
-										<Button variant="contained" href={`/${this.state.stateSelected}`}>
-											Search
-      									</Button>
-										{/* {this.state.showInfoTypes ? (
-											<Categories state={this.state.stateSelected} />
-										) : null} */}
+					</Grid>
+					<Grid item sm={3}></Grid>
+				</Grid>
 
-									</div>
-								</div>
-							</div>
-							{/* <div className="">
-								<InformationComponent />
-							</div> */}
-						</div>
-						<div className="news-stats card">
-							<h5>Latest news</h5>
-							<NewsContainer initialProps={this.props.initialProps} />
-						</div>
-					</div>
-				</div>
-				<Twitter state="National" />
-				<Telegram state="National" />
+				<TwitterComponent state="National" />
+				<TelegramComponent state="National" />
+
 			</div>
 		);
 	}
