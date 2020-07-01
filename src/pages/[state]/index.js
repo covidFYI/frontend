@@ -130,7 +130,7 @@ const Index = ({ state }) => {
 							<Tab label="Government Contacts" icon={<ContactMailIcon fontSize="large" />} {...a11yProps(6)} />
 						</Tabs>
 					</AppBar>
-					<AdditionalFilters state={selectedState} category={selectedCategory} area={selectedDistrict} clickHandler={subcategoryChangeHandler} />
+					{/* <AdditionalFilters state={selectedState} category={selectedCategory} area={selectedDistrict} clickHandler={subcategoryChangeHandler} /> */}
 					<TabPanel value={value} index={0}>
 						<CategoryData state={selectedState} category="Helplines" area={selectedDistrict} subCategorySelected={selectedSubCategory} />
 					</TabPanel>

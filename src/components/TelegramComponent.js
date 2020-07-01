@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
   },
   text: {
     fontFamily: 'inherit',
-    fontSize: 40,
+    fontSize: 35,
     fontWeight: "bold",
   },
   button: {
