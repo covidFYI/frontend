@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import getDataFor from '../utils/getDataFor'
 import Auxiliary from '../hoc/Auxiliary/Auxiliary'
-import AdditionalFilters from "./AdditionalFilters";
-import { red } from "@material-ui/core/colors";
 
 const getSource = (dataUnit) => {
   if (dataUnit.source_link_valid) {
