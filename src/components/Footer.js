@@ -59,10 +59,10 @@ export default class Footer extends Component {
               {/* <img src="/assets/facebook.svg" /> */}
               <FacebookIcon style={{ color:"white"}} />
             </a>
-            {/* <a className="social-media-link" href="" target="_blank"> */}
+            <a className="social-media-link" href="https://www.linkedin.com/company/covidfyi" target="_blank">
               {/* <img src="/assets/linkedin.svg" /> */}
-              {/* <LinkedInIcon style={{ color:"white"}}></LinkedInIcon> */}
-            {/* </a> */}
+              <LinkedInIcon style={{ color:"white"}}></LinkedInIcon>
+            </a>
             <a className="social-media-link" href="https://twitter.com/covid_fyi" target="_blank">
               {/* <img src="/assets/twitter.svg" /> */}
               <TwitterIcon style={{ color:"white"}} >  </TwitterIcon>
