@@ -31,10 +31,12 @@ npm run dev
 ## Contributors
 
 👤 **Prathamesh Koshti** <br />
-👤 **Yogesh Bhatt**
+👤 **Yogesh Bhatt** <br />
+👤 **Sushant Goyal** <br />
+👤 **Ankur Goyal**
 
-* Website: https://covidfyi.in/
-* Github: [@covidfyi/covidfyi-frontend](https://github.com/covidfyi/covidfyi-frontend)
+- Website: https://covidfyi.in/
+- Github: [@covidfyi/covidfyi-frontend](https://github.com/covidfyi/covidfyi-frontend)
 
 ## 🤝 Contributing
 
@@ -47,4 +49,3 @@ Give a ⭐️ if this project helped you!
 ## 📝 License
 
 Copyright © 2020<br />
-
